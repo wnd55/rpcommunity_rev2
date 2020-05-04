@@ -139,18 +139,9 @@ AppAsset::register($this);
                             <li>
                                 <?= Html::a('Регистрации', Url::toRoute('/user')) ?>
                             </li>
+
                             <li>
-                                <a href="javascript:;">Sub Item Three
-                                </a>
-                                <ul>
-                                    <li><a href="#">Sub Item Link 1</a></li>
-                                    <li><a href="#">Sub Item Link 1</a></li>
-                                    <li><a href="#">Sub Item Link 1</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Sub Item Four
-                                </a>
+                                <?= Html::a('Настройки', Url::toRoute('/site/host-settings')) ?>
                             </li>
                         </ul>
                     </li>

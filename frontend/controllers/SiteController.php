@@ -1,4 +1,5 @@
 <?php
+
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -248,4 +249,15 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+    /**
+     * @return string
+     */
+    public function actionOffline()
+
+    {
+        return $this->render('offline');
+    }
+
+
 }

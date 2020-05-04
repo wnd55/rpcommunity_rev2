@@ -15,12 +15,17 @@ class ProfileSearchForm extends Model
     public $account;
     public $homeowners_id;
     public $address_id;
+    public $role;
 
+    /**
+     * @return array
+     */
     public function rules()
     {
         return [
 
-            [['surname','email'], 'string'],
+            [['surname', 'role'], 'string'],
+            [['email'], 'email'],
             [['account', 'homeowners_id', 'address_id'], 'integer']
 
 
@@ -30,13 +35,29 @@ class ProfileSearchForm extends Model
     public function search(array $params)
     {
 
-        $query = Profile::find()->joinWith(['user', 'address', 'homeowners']);
+        $query = Profile::find()->joinWith(['user', 'address', 'homeowners', 'user.authAssignment']);
 
         $provider = new ActiveDataProvider([
 
             'query' => $query
 
         ]);
+
+        $provider->setSort([
+            'attributes' => array_merge(
+                $provider->getSort()->attributes,
+                [
+                    'role' => [
+                        'asc' => ['auth_assignment.item_name' => SORT_ASC],
+                        'desc' => ['auth_assignment.item_name' => SORT_DESC],
+
+                    ],
+
+                ]
+            ),
+        ]);
+
+
 
         $this->load($params);
 
@@ -65,6 +86,15 @@ class ProfileSearchForm extends Model
             $query->andFilterWhere(['address.idaddress' => $this->address_id]);
 
         }
+
+        if (!empty($this->role)) {
+
+        $query->andFilterWhere(['auth_assignment.item_name' => $this->role]);
+
+    }
+
+
+
         return $provider;
     }
 

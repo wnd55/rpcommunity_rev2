@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use \yii\helpers\Url;
+use yii\grid\ActionColumn;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\AddressSearchForm */
@@ -32,7 +33,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'idaddress',
             'address',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => ActionColumn::class,
+                'template' => '{view}{update}',
+
+
+            ],
         ],
     ]); ?>
 

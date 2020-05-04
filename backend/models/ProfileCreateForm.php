@@ -21,12 +21,12 @@ class ProfileCreateForm extends Model
     public $check1;
     public $check2;
 
-    private $brand;
+    private $profile;
 
 
     public function __construct(Profile $profile = null, array $config = [])
     {
-        if(isset($profile)) {
+        if (isset($profile)) {
 
             $this->user_id = $profile->user_id;
             $this->account = $profile->account;
@@ -38,6 +38,8 @@ class ProfileCreateForm extends Model
             $this->patronymic = $profile->patronymic;
             $this->check1 = $profile->check1;
             $this->check1 = $profile->check2;
+
+            $this->profile = $profile;
         }
         parent::__construct($config);
     }
@@ -49,14 +51,15 @@ class ProfileCreateForm extends Model
     {
         return [
             [['user_id', 'account', 'homeowners_id', 'address_id', 'apartment', 'surname', 'name', 'patronymic',], 'required'],
-            [['user_id', 'account', 'homeowners_id', 'address_id', 'apartment',], 'integer'],
-            [['surname', 'patronymic'], 'string', 'max' => 255],
+            [['user_id', 'homeowners_id', 'address_id', 'apartment',], 'integer'],
+            [['surname', 'patronymic', 'account',], 'string', 'max' => 255],
             [['name'], 'string', 'max' => 45],
+            [['account', 'apartment'], 'string',],
             [['check1', 'check2'], 'boolean'],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id'], ],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id'],],
             [['address_id'], 'exist', 'skipOnError' => true, 'targetClass' => Address::class, 'targetAttribute' => ['address_id' => 'idaddress']],
             [['homeowners_id'], 'exist', 'skipOnError' => true, 'targetClass' => Homeowners::class, 'targetAttribute' => ['homeowners_id' => 'idhomeowners']],
-       ];
+        ];
     }
 
 
@@ -89,8 +92,9 @@ class ProfileCreateForm extends Model
      */
     public function getUserList()
     {
+        $query = Profile::find()->select('user_id');
 
-        return ArrayHelper::map(User::find()->orderBy('email ASC')->all(), 'id', 'email');
+        return ArrayHelper::map(User::find()->where(['not in', 'id', $query])->orWhere(['=', 'id', isset($this->profile) ? $this->profile->user_id : ''])->orderBy('email ASC')->asArray()->all(), 'id', 'email');
     }
 
     /**

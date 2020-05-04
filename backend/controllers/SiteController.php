@@ -1,7 +1,9 @@
 <?php
 namespace backend\controllers;
 
+use backend\models\HostSettings;
 use Yii;
+use yii\base\Model;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -26,7 +28,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index', 'host-settings'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -99,5 +101,37 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    /**
+     * @return string
+     */
+    public function actionHostSettings()
+    {
+       $settings = HostSettings::find()->all();
+
+
+        $hostSettings = [new HostSettings()];
+
+        if(Model::loadMultiple($hostSettings, Yii::$app->request->post()) && Model::validateMultiple($hostSettings)){
+
+            foreach ($hostSettings as $setting){
+
+                $setting->save(false);
+            }
+            return $this->goHome();
+        }
+
+        if(Model::loadMultiple($settings, Yii::$app->request->post()) && Model::validateMultiple($settings)){
+
+            foreach ($settings as $setting){
+
+                $setting->save(false);
+            }
+            return $this->goHome();
+        }
+
+
+        return  $this->render('host-settings', ['hostSettings' => $hostSettings, 'settings' => $settings]);
     }
 }

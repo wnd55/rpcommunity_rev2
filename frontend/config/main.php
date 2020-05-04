@@ -1,4 +1,7 @@
 <?php
+
+use \backend\models\HostSettings;
+
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
     require __DIR__ . '/../../common/config/params-local.php',
@@ -10,7 +13,19 @@ return [
     'id' => 'rp-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+
     'controllerNamespace' => 'frontend\controllers',
+    'on beforeRequest' => function ($event) {
+        $maintenance = HostSettings::findOne(['value' => 'Сервис']);
+
+        if ((bool)$maintenance->status === true) {
+            Yii::$app->catchAll = [
+                'site/offline',
+
+            ];
+        }
+    },
+
     'components' => [
         'request' => [
             'baseUrl' => '',
@@ -47,5 +62,6 @@ return [
         ],
 
     ],
+
     'params' => $params,
 ];

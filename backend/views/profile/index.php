@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'account',
         [
-           'attribute' => 'homeowners_id',
+            'attribute' => 'homeowners_id',
             'label' => 'ТСЖ',
             'value' => function ($model) {
 
@@ -66,10 +66,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ],
         'apartment',
+        [
+            'attribute' => 'role',
+            'label' => 'Роль',
+            'value'=> 'user.authAssignment.item_name',
+
+
+        ],
         'created_at:date',
         'updated_at:date',
-        'created_by',
-        'updated_by',
 
         [
             'class' => ActionColumn::class,

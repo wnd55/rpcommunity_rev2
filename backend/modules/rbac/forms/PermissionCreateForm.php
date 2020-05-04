@@ -29,10 +29,7 @@ class PermissionCreateForm extends Model
 
             ];
 
-
-
     }
-
 
     /**
      * {@inheritdoc}

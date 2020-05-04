@@ -1,4 +1,5 @@
 <?php
+
 return [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -25,16 +26,16 @@ return [
                 [
                     'class' => 'yii\log\DbTarget',
                     'levels' => ['error'],
-                    'except'=>[],
-                    'prefix'=>function () {
+                    'except' => [],
+                    'prefix' => function () {
                         $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : null;
                         return sprintf('[%s][%s]', Yii::$app->id, $url);
                     },
-                    'logVars'=>[],
-                    'logTable'=>'{{%system_log}}'
-]
-             ]
-                ],
+                    'logVars' => [],
+                    'logTable' => '{{%system_log}}'
+                ]
+            ]
+        ],
 
     ],
 ];
