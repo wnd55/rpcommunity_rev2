@@ -13,36 +13,38 @@ $this->params['breadcrumbs'][] = ['label' => 'Главная', 'url' => ['index'
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
-    <div class="address-create">
-        <h1>Добавить новую настроику</h1>
-<?php
-$form = ActiveForm::begin();
+<div class="address-create">
+    <h4>Добавить новую настройку</h4>
+    <div class="box">
 
-foreach ($hostSettings as $index => $setting) {
-    echo $form->field($setting, "[$index]name")->label($setting->name);
-    echo $form->field($setting, "[$index]value")->label($setting->value);
-    echo $form->field($setting, "[$index]status")->checkbox();
+            <?php $form = ActiveForm::begin(); ?>
+            <?php
+            foreach ($hostSettings as $index => $setting) {
+                echo $form->field($setting, "[$index]name")->label($setting->name);
+                echo $form->field($setting, "[$index]value")->label($setting->value);
+                echo $form->field($setting, "[$index]status")->checkbox();
 
-}
-echo Html::submitButton('Сохранить');
+            }
+            ?>
 
-ActiveForm::end();
+        <div class="form-group">
+            <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        </div>
+        <?php ActiveForm::end(); ?>
+    </div>
 
-
-?>
-
-
-    <label for="items" class="control-label">Настройки</label>
-<?php $formUpdate = ActiveForm::begin([
-    'id' => 'formUpdate'
-]); ?>
+    <h4>Настройки</h4>
+    <?php $formUpdate = ActiveForm::begin([
+        'id' => 'formUpdate'
+    ]); ?>
     <div class="table-responsive">
         <table class="table table-bordered" id="items">
             <thead>
             <tr style="background-color: rgba(42,0,49,0.33);">
                 <th width="30%" class="text-left">Название</th>
-                <th width="70%" class="text-left">Значение</th>
+                <th width="60%" class="text-left">Значение</th>
                 <th width="5%" class="text-left">Статус</th>
+                <th width="5%" class="text-left">Удалить</th>
             </tr>
             </thead>
             <tbody>
@@ -54,6 +56,13 @@ ActiveForm::end();
                     <td class="text-left"><?= $form->field($setting, "[$index]name"); ?></td>
                     <td class="text-left"><?= $form->field($setting, "[$index]value"); ?></td>
                     <td class="text-center"><?= $form->field($setting, "[$index]status")->checkbox(); ?></td>
+                    <td class="text-center"><?= Html::a('', ['delete-setting', 'id' => $setting->id], [
+                            'class' => 'glyphicon glyphicon-trash',
+                            'data' => [
+                                'confirm' => 'Вы уверены, что хотите удалить данную настройку?',
+                                'method' => 'post',
+                            ],
+                        ]) ?></td>
                 </tr>
 
             <?php endforeach; ?>
@@ -66,6 +75,6 @@ ActiveForm::end();
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
-<?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
 
-    </div>
+</div>

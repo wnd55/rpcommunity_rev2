@@ -1,9 +1,8 @@
 
-
 html,
 body {
     height: 100%;
-    font-family:sans-serif;
+    font-family: sans-serif;
 }
 
 .wrap {
@@ -190,7 +189,7 @@ a.navbar-brand:hover {
 Заголовки
  */
 
-h1{
+h1 {
 
     font-size: 1.5em;
 }
@@ -200,9 +199,24 @@ h1{
     display: none;
 }
 
-/*.error-info{*/
+/**
+Forms
+ */
 
-    /*margin-left: 1em;*/
-    /*height: 1.5em;*/
-    /*background-color: #f1ad2e*/
-/*}*/
+.box {
+    border-top: 3px solid #d2d6de;
+    margin: 20px 0 50px;
+    padding:10px;
+}
+
+.box-section {
+
+    padding: 50px 0;
+
+}
+
+.box-section-last {
+
+    padding: 50px 0 100px;
+
+}

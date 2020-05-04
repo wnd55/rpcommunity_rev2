@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use backend\models\HostSettings;
@@ -28,7 +29,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'host-settings'],
+                        'actions' => ['logout', 'index', 'host-settings', 'delete-setting'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -38,6 +39,7 @@ class SiteController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
+                    'delete-setting' => ['post']
                 ],
             ],
         ];
@@ -73,7 +75,7 @@ class SiteController extends Controller
     public function actionLogin()
     {
 
-       $this->layout = 'backendLogin';
+        $this->layout = 'backendLogin';
 
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -108,30 +110,47 @@ class SiteController extends Controller
      */
     public function actionHostSettings()
     {
-       $settings = HostSettings::find()->all();
-
+        $settings = HostSettings::find()->all();
 
         $hostSettings = [new HostSettings()];
 
-        if(Model::loadMultiple($hostSettings, Yii::$app->request->post()) && Model::validateMultiple($hostSettings)){
+        if (Model::loadMultiple($hostSettings, Yii::$app->request->post()) && Model::validateMultiple($hostSettings)) {
 
-            foreach ($hostSettings as $setting){
-
-                $setting->save(false);
-            }
-            return $this->goHome();
-        }
-
-        if(Model::loadMultiple($settings, Yii::$app->request->post()) && Model::validateMultiple($settings)){
-
-            foreach ($settings as $setting){
+            foreach ($hostSettings as $setting) {
 
                 $setting->save(false);
             }
-            return $this->goHome();
+            return $this->redirect('host-settings');
+        }
+
+        if (Model::loadMultiple($settings, Yii::$app->request->post()) && Model::validateMultiple($settings)) {
+
+            foreach ($settings as $setting) {
+
+                $setting->save(false);
+            }
+            return $this->redirect('host-settings');
         }
 
 
-        return  $this->render('host-settings', ['hostSettings' => $hostSettings, 'settings' => $settings]);
+        return $this->render('host-settings', ['hostSettings' => $hostSettings, 'settings' => $settings]);
     }
+
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     * @throws \ErrorException
+     */
+    public function actionDeleteSetting($id)
+    {
+        $setting = HostSettings::findOne($id);
+        if (!$setting->delete()) {
+
+            throw new \ErrorException('Ошибка удаления');
+        }
+
+        return $this->redirect('host-settings');
+    }
+
+
 }

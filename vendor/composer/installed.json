@@ -113,7 +113,7 @@
         "version_normalized": "3.3.11.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/RobinHerbots/Inputmask.git",
+            "url": "git@github.com:RobinHerbots/Inputmask.git",
             "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
         },
         "dist": {
@@ -1275,6 +1275,113 @@
         ]
     },
     {
+        "name": "mihaildev/yii2-ckeditor",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MihailDev/yii2-ckeditor.git",
+            "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/MihailDev/yii2-ckeditor/zipball/d20aa7f6bcf610fee226d6eb15212a279875bf87",
+            "reference": "d20aa7f6bcf610fee226d6eb15212a279875bf87",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "*"
+        },
+        "time": "2014-11-19T22:04:08+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "mihaildev\\ckeditor\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Mihail",
+                "email": "mihail.kucher@gmail.com",
+                "homepage": "https://github.com/MihailDev",
+                "role": "Developer"
+            }
+        ],
+        "description": "Yii2 CKEditor",
+        "homepage": "https://github.com/MihailDev/yii2-ckeditor",
+        "keywords": [
+            "CKEditor",
+            "editor",
+            "wysiwyg",
+            "yii"
+        ]
+    },
+    {
+        "name": "mihaildev/yii2-elfinder",
+        "version": "1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/MihailDev/yii2-elfinder.git",
+            "reference": "adc705b32f8d64f6bcf97d3c45d0a972c86e372e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/MihailDev/yii2-elfinder/zipball/adc705b32f8d64f6bcf97d3c45d0a972c86e372e",
+            "reference": "adc705b32f8d64f6bcf97d3c45d0a972c86e372e",
+            "shasum": ""
+        },
+        "require": {
+            "studio-42/elfinder": "^2.1.10",
+            "yiisoft/yii2": "~2.0.13",
+            "yiisoft/yii2-jui": "*"
+        },
+        "time": "2019-06-07T20:43:53+00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "asset-installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "mihaildev\\elfinder\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Mihail",
+                "email": "mihail.kucher@gmail.com",
+                "homepage": "https://github.com/MihailDev",
+                "role": "Developer"
+            }
+        ],
+        "description": "Yii2 ElFinder",
+        "homepage": "https://github.com/MihailDev/yii2-elfinder",
+        "keywords": [
+            "elfinder",
+            "filemanager",
+            "yii"
+        ]
+    },
+    {
         "name": "myclabs/deep-copy",
         "version": "1.9.5",
         "version_normalized": "1.9.5.0",
@@ -1388,6 +1495,57 @@
         ]
     },
     {
+        "name": "paulzi/yii2-nested-sets",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paulzi/yii2-nested-sets.git",
+            "reference": "05b51d129295e10becf603777aa25cf555329f46"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paulzi/yii2-nested-sets/zipball/05b51d129295e10becf603777aa25cf555329f46",
+            "reference": "05b51d129295e10becf603777aa25cf555329f46",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "yiisoft/yii2": "~2.0.0"
+        },
+        "require-dev": {
+            "phpunit/dbunit": "~1.0",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2018-07-31T13:38:08+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "paulzi\\nestedsets\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexander Kochetov",
+                "email": "creocoder@gmail.com"
+            },
+            {
+                "name": "PaulZi",
+                "email": "pavel.zimakoff@gmail.com"
+            }
+        ],
+        "description": "Nested Sets Behavior for Yii2",
+        "keywords": [
+            "nested sets",
+            "yii2"
+        ]
+    },
+    {
         "name": "phar-io/manifest",
         "version": "1.0.3",
         "version_normalized": "1.0.3.0",
@@ -1495,26 +1653,23 @@
     },
     {
         "name": "phpdocumentor/reflection-common",
-        "version": "2.0.0",
-        "version_normalized": "2.0.0.0",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
-            "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a"
+            "reference": "6568f4687e5b41b054365f9ae03fcb1ed5f2069b"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/63a995caa1ca9e5590304cd845c15ad6d482a62a",
-            "reference": "63a995caa1ca9e5590304cd845c15ad6d482a62a",
+            "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/6568f4687e5b41b054365f9ae03fcb1ed5f2069b",
+            "reference": "6568f4687e5b41b054365f9ae03fcb1ed5f2069b",
             "shasum": ""
         },
         "require": {
             "php": ">=7.1"
         },
-        "require-dev": {
-            "phpunit/phpunit": "~6"
-        },
-        "time": "2018-08-07T13:53:10+00:00",
+        "time": "2020-04-27T09:25:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1717,17 +1872,17 @@
     },
     {
         "name": "phpoffice/phpspreadsheet",
-        "version": "1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "1.12.0",
+        "version_normalized": "1.12.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
-            "reference": "c2a205e82f9cf1cc9fab86b79e808d86dd680470"
+            "reference": "f79611d6dc1f6b7e8e30b738fc371b392001dbfd"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/c2a205e82f9cf1cc9fab86b79e808d86dd680470",
-            "reference": "c2a205e82f9cf1cc9fab86b79e808d86dd680470",
+            "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/f79611d6dc1f6b7e8e30b738fc371b392001dbfd",
+            "reference": "f79611d6dc1f6b7e8e30b738fc371b392001dbfd",
             "shasum": ""
         },
         "require": {
@@ -1765,7 +1920,7 @@
             "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
             "tecnickcom/tcpdf": "Option for rendering PDF with PDF Writer"
         },
-        "time": "2020-03-02T13:09:03+00:00",
+        "time": "2020-04-27T08:12:48+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -3145,6 +3300,66 @@
         "homepage": "https://github.com/sebastianbergmann/version"
     },
     {
+        "name": "studio-42/elfinder",
+        "version": "2.1.56",
+        "version_normalized": "2.1.56.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Studio-42/elFinder.git",
+            "reference": "fa09409aaffe855e1e33b958301d5597c2036062"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Studio-42/elFinder/zipball/fa09409aaffe855e1e33b958301d5597c2036062",
+            "reference": "fa09409aaffe855e1e33b958301d5597c2036062",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "suggest": {
+            "barryvdh/elfinder-flysystem-driver": "VolumeDriver for elFinder to use Flysystem as a root.",
+            "google/apiclient": "VolumeDriver GoogleDrive require `google/apiclient:^2.0.",
+            "kunalvarma05/dropbox-php-sdk": "VolumeDriver `Dropbox`2 require `kunalvarma05/dropbox-php-sdk.",
+            "nao-pon/flysystem-google-drive": "require in GoogleDrive network volume mounting with Flysystem."
+        },
+        "time": "2020-04-09T02:33:28+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Dmitry Levashov",
+                "email": "dio@std42.ru",
+                "homepage": "http://std42.ru"
+            },
+            {
+                "name": "Troex Nevelin",
+                "email": "troex@fury.scancode.ru",
+                "homepage": "http://std42.ru"
+            },
+            {
+                "name": "Naoki Sawada",
+                "email": "hypweb+elfinder@gmail.com",
+                "homepage": "http://xoops.hypweb.net"
+            },
+            {
+                "name": "Community contributions",
+                "homepage": "https://github.com/Studio-42/elFinder/contributors"
+            }
+        ],
+        "description": "File manager for web",
+        "homepage": "http://elfinder.org"
+    },
+    {
         "name": "swiftmailer/swiftmailer",
         "version": "v6.2.3",
         "version_normalized": "6.2.3.0",
@@ -3269,8 +3484,8 @@
     },
     {
         "name": "symfony/console",
-        "version": "v5.0.7",
-        "version_normalized": "5.0.7.0",
+        "version": "v5.0.8",
+        "version_normalized": "5.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/console.git",
@@ -3347,8 +3562,8 @@
     },
     {
         "name": "symfony/css-selector",
-        "version": "v5.0.7",
-        "version_normalized": "5.0.7.0",
+        "version": "v5.0.8",
+        "version_normalized": "5.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/css-selector.git",
@@ -3402,8 +3617,8 @@
     },
     {
         "name": "symfony/dom-crawler",
-        "version": "v4.4.7",
-        "version_normalized": "4.4.7.0",
+        "version": "v4.4.8",
+        "version_normalized": "4.4.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/dom-crawler.git",
@@ -3465,8 +3680,8 @@
     },
     {
         "name": "symfony/event-dispatcher",
-        "version": "v5.0.7",
-        "version_normalized": "5.0.7.0",
+        "version": "v5.0.8",
+        "version_normalized": "5.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/event-dispatcher.git",
@@ -3597,8 +3812,8 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v5.0.7",
-        "version_normalized": "5.0.7.0",
+        "version": "v5.0.8",
+        "version_normalized": "5.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
@@ -4071,17 +4286,17 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v5.0.7",
-        "version_normalized": "5.0.7.0",
+        "version": "v5.0.8",
+        "version_normalized": "5.0.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/yaml.git",
-            "reference": "ad5e9c83ade5bbb3a96a3f30588a0622708caefd"
+            "reference": "482fb4e710e5af3e0e78015f19aa716ad953392f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/ad5e9c83ade5bbb3a96a3f30588a0622708caefd",
-            "reference": "ad5e9c83ade5bbb3a96a3f30588a0622708caefd",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/482fb4e710e5af3e0e78015f19aa716ad953392f",
+            "reference": "482fb4e710e5af3e0e78015f19aa716ad953392f",
             "shasum": ""
         },
         "require": {
@@ -4097,7 +4312,7 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2020-03-30T11:42:42+00:00",
+        "time": "2020-04-28T17:58:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4224,17 +4439,17 @@
     },
     {
         "name": "yiisoft/yii2",
-        "version": "2.0.34",
-        "version_normalized": "2.0.34.0",
+        "version": "2.0.35",
+        "version_normalized": "2.0.35.0",
         "source": {
             "type": "git",
             "url": "https://github.com/yiisoft/yii2-framework.git",
-            "reference": "ef2585379bc387433e150a62451a89a4b1e130d7"
+            "reference": "d42809e4969cdc0adb97197ba32774b3e4cd9e8e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ef2585379bc387433e150a62451a89a4b1e130d7",
-            "reference": "ef2585379bc387433e150a62451a89a4b1e130d7",
+            "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/d42809e4969cdc0adb97197ba32774b3e4cd9e8e",
+            "reference": "d42809e4969cdc0adb97197ba32774b3e4cd9e8e",
             "shasum": ""
         },
         "require": {
@@ -4250,7 +4465,7 @@
             "php": ">=5.4.0",
             "yiisoft/yii2-composer": "~2.0.4"
         },
-        "time": "2020-03-26T20:42:29+00:00",
+        "time": "2020-05-02T11:11:31+00:00",
         "bin": [
             "yii"
         ],

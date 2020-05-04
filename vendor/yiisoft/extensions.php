@@ -57,4 +57,31 @@ return array (
       '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
     ),
   ),
+  'mihaildev/yii2-ckeditor' => 
+  array (
+    'name' => 'mihaildev/yii2-ckeditor',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@mihaildev/ckeditor' => $vendorDir . '/mihaildev/yii2-ckeditor',
+    ),
+  ),
+  'mihaildev/yii2-elfinder' => 
+  array (
+    'name' => 'mihaildev/yii2-elfinder',
+    'version' => '1.4.0.0',
+    'alias' => 
+    array (
+      '@mihaildev/elfinder' => $vendorDir . '/mihaildev/yii2-elfinder',
+    ),
+  ),
+  'paulzi/yii2-nested-sets' => 
+  array (
+    'name' => 'paulzi/yii2-nested-sets',
+    'version' => '1.1.0.0',
+    'alias' => 
+    array (
+      '@paulzi/nestedsets' => $vendorDir . '/paulzi/yii2-nested-sets',
+    ),
+  ),
 );

@@ -146,10 +146,23 @@ AppAsset::register($this);
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;">
+                        <a href="#">
                             <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span class="title">Products</span>
+                            <span class="title">Категории</span>
                         </a>
+                        <ul>
+
+                            <li>
+                                <?= Html::a('Страницы', Url::toRoute('/page')) ?>
+                            </li>
+
+                            <li>
+                                <?= Html::a('Категории страниц', Url::toRoute('/categore-pages')) ?>
+                            </li>
+                            <li>
+                                <?= Html::a('Меню', Url::toRoute('/menu')) ?>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="last ">

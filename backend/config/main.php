@@ -22,6 +22,21 @@ return [
             'class' => 'backend\modules\rbac\rbac',
         ],
     ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\Controller',
+            'access' => ['admin'],
+            'disabledCommands' => ['netmount'],
+            'roots' => [
+                [
+                    'baseUrl' => '@web',
+                    'basePath' => '@webroot',
+                    'path' => 'pages/filesPage',
+                    'name' => 'filesPage'
+                ],
+            ],
+        ],
+    ],
     'components' => [
         'request' => [
             'baseUrl' => '/admin',
@@ -60,7 +75,7 @@ return [
             'showScriptName' => false,
             'rules' => [
 
-               //'<module>/rbac/<action>' => '<module>/rbac/default/<action>',
+                //'<module>/rbac/<action>' => '<module>/rbac/default/<action>',
 
             ],
         ],

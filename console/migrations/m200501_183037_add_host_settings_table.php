@@ -28,7 +28,7 @@ class m200501_183037_add_host_settings_table extends Migration
             'updated_at' => $this->integer()->notNull(),
             'created_by' => $this->integer()->notNull(),
             'updated_by' => $this->integer()->notNull(),
-        ]);
+        ], $tableOptions);
     }
 
     /**
