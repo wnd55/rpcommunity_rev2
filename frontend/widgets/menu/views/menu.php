@@ -1,17 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: webndesign
- * Date: 04.05.20
- * Time: 22:48
- */
+
+/* @var $provider \yii\data\ActiveDataProvider */
+/* @var $pages \backend\models\Pages */
+
+//\yii\helpers\VarDumper::dump($pages, 20, true);die();
 
 ?>
 
 
 <ul>
-    <?php
-//    foreach ()
+    <?php if (isset($pages)): ?>
+        <?php foreach ($pages as $page): ?>
+            <li> <?= $page->title ?></li>
 
-?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
 </ul>

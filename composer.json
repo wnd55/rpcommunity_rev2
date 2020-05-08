@@ -24,7 +24,9 @@
         "bower-asset/font-awesome": "^4.0",
         "mihaildev/yii2-ckeditor": "^1.0",
         "mihaildev/yii2-elfinder": "^1.2",
-        "paulzi/yii2-nested-sets": "^1.0"
+        "paulzi/yii2-nested-sets": "^1.0",
+        "consik/yii2-websocket": "^1.0"
+
 
     },
     "require-dev": {

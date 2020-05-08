@@ -2,182 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb6e4e10-c607-4205-8fce-96f171ec706d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/controllers/PageController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/models/PageForm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/models/Pages.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/models/PagesSearchForm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/views/page/_form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/views/page/_search.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/views/page/create.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/views/page/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/views/page/update.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/views/page/view.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/console/migrations/m200504_105901_add_menus_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/console/migrations/m200504_110823_add_pages_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/console/migrations/m200504_173556_add_categories_pages__table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/console/migrations/m200504_201158_add_categories_pages_id_to_pages_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/widgets/menu/MenuWidget.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/widgets/menu/views/menu.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/.sami.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/favicon.ico" afterPath="$PROJECT_DIR$/backend/web/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-Black.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-Black.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-BlackItalic.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-BlackItalic.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-Bold.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-Bold.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-BoldItalic.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-BoldItalic.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-Italic.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-Italic.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-Light.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-Light.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-LightItalic.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-LightItalic.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-Regular.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-Regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-Thin.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-Thin.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/fonts/Lato-ThinItalic.ttf" afterPath="$PROJECT_DIR$/backend/web/fonts/Lato-ThinItalic.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/Help-Document.docx" afterPath="$PROJECT_DIR$/backend/web/temp_menu/Help-Document.docx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/css/bg.png" afterPath="$PROJECT_DIR$/backend/web/temp_menu/css/bg.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/console/controllers/User.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/controllers/CategorePagesController.php" afterPath="$PROJECT_DIR$/backend/controllers/CategoryPagesController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/models/CategorePagesSearchForm.php" afterPath="$PROJECT_DIR$/backend/models/CategoryPagesSearchForm.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/views/categore-pages/_form.php" afterPath="$PROJECT_DIR$/backend/views/category-pages/_form.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/views/categore-pages/_search.php" afterPath="$PROJECT_DIR$/backend/views/category-pages/_search.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/views/categore-pages/create.php" afterPath="$PROJECT_DIR$/backend/views/category-pages/create.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/views/categore-pages/index.php" afterPath="$PROJECT_DIR$/backend/views/category-pages/index.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/views/categore-pages/update.php" afterPath="$PROJECT_DIR$/backend/views/category-pages/update.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/backend/views/categore-pages/view.php" afterPath="$PROJECT_DIR$/backend/views/category-pages/view.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/controllers/.gitkeep" afterPath="$PROJECT_DIR$/console/controllers/.gitkeep" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/Dockerfile" afterPath="$PROJECT_DIR$/backend/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/assets/AppAsset.php" afterPath="$PROJECT_DIR$/backend/assets/AppAsset.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/codeception.yml" afterPath="$PROJECT_DIR$/backend/codeception.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/config/.gitignore" afterPath="$PROJECT_DIR$/backend/config/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/config/bootstrap.php" afterPath="$PROJECT_DIR$/backend/config/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/config/main.php" afterPath="$PROJECT_DIR$/backend/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/config/params.php" afterPath="$PROJECT_DIR$/backend/config/params.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/config/test.php" afterPath="$PROJECT_DIR$/backend/config/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/AddressController.php" afterPath="$PROJECT_DIR$/backend/controllers/AddressController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/HomeownerController.php" afterPath="$PROJECT_DIR$/backend/controllers/HomeownerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/backend/controllers/ProfileController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/backend/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/controllers/UserController.php" afterPath="$PROJECT_DIR$/backend/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/.gitkeep" afterPath="$PROJECT_DIR$/backend/models/.gitkeep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Address.php" afterPath="$PROJECT_DIR$/backend/models/Address.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/AddressSearchForm.php" afterPath="$PROJECT_DIR$/backend/models/AddressSearchForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Homeowners.php" afterPath="$PROJECT_DIR$/backend/models/Homeowners.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/HomeownersSearchForm.php" afterPath="$PROJECT_DIR$/backend/models/HomeownersSearchForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/HostSettings.php" afterPath="$PROJECT_DIR$/backend/models/HostSettings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/Profile.php" afterPath="$PROJECT_DIR$/backend/models/Profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/ProfileCreateForm.php" afterPath="$PROJECT_DIR$/backend/models/ProfileCreateForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/ProfileSearchForm.php" afterPath="$PROJECT_DIR$/backend/models/ProfileSearchForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/UsersSearchForm.php" afterPath="$PROJECT_DIR$/backend/models/UsersSearchForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/rbac/entities/AuthAssignment.php" afterPath="$PROJECT_DIR$/backend/modules/rbac/entities/AuthAssignment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/modules/rbac/entities/AuthRule.php" afterPath="$PROJECT_DIR$/backend/modules/rbac/entities/AuthRule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/runtime/.gitignore" afterPath="$PROJECT_DIR$/backend/runtime/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_bootstrap.php" afterPath="$PROJECT_DIR$/backend/tests/_bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_data/.gitignore" afterPath="$PROJECT_DIR$/backend/tests/_data/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_data/login_data.php" afterPath="$PROJECT_DIR$/backend/tests/_data/login_data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_output/.gitignore" afterPath="$PROJECT_DIR$/backend/tests/_output/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_support/.gitignore" afterPath="$PROJECT_DIR$/backend/tests/_support/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_support/FunctionalTester.php" afterPath="$PROJECT_DIR$/backend/tests/_support/FunctionalTester.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/_support/UnitTester.php" afterPath="$PROJECT_DIR$/backend/tests/_support/UnitTester.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/functional.suite.yml" afterPath="$PROJECT_DIR$/backend/tests/functional.suite.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/functional/LoginCest.php" afterPath="$PROJECT_DIR$/backend/tests/functional/LoginCest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/functional/_bootstrap.php" afterPath="$PROJECT_DIR$/backend/tests/functional/_bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/unit.suite.yml" afterPath="$PROJECT_DIR$/backend/tests/unit.suite.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/tests/unit/_bootstrap.php" afterPath="$PROJECT_DIR$/backend/tests/unit/_bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/address/_form.php" afterPath="$PROJECT_DIR$/backend/views/address/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/address/_search.php" afterPath="$PROJECT_DIR$/backend/views/address/_search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/address/create.php" afterPath="$PROJECT_DIR$/backend/views/address/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/address/index.php" afterPath="$PROJECT_DIR$/backend/views/address/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/address/update.php" afterPath="$PROJECT_DIR$/backend/views/address/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/address/view.php" afterPath="$PROJECT_DIR$/backend/views/address/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/homeowner/_form.php" afterPath="$PROJECT_DIR$/backend/views/homeowner/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/homeowner/create.php" afterPath="$PROJECT_DIR$/backend/views/homeowner/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/homeowner/index.php" afterPath="$PROJECT_DIR$/backend/views/homeowner/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/homeowner/update.php" afterPath="$PROJECT_DIR$/backend/views/homeowner/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/homeowner/view.php" afterPath="$PROJECT_DIR$/backend/views/homeowner/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/layouts/backendLogin.php" afterPath="$PROJECT_DIR$/backend/views/layouts/backendLogin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/profile/_form.php" afterPath="$PROJECT_DIR$/backend/views/profile/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/profile/create.php" afterPath="$PROJECT_DIR$/backend/views/profile/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/profile/index.php" afterPath="$PROJECT_DIR$/backend/views/profile/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/profile/update.php" afterPath="$PROJECT_DIR$/backend/views/profile/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/profile/view.php" afterPath="$PROJECT_DIR$/backend/views/profile/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/site/error.php" afterPath="$PROJECT_DIR$/backend/views/site/error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/site/host-settings.php" afterPath="$PROJECT_DIR$/backend/views/site/host-settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/site/index.php" afterPath="$PROJECT_DIR$/backend/views/site/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/site/login.php" afterPath="$PROJECT_DIR$/backend/views/site/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/user/_form.php" afterPath="$PROJECT_DIR$/backend/views/user/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/user/create.php" afterPath="$PROJECT_DIR$/backend/views/user/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/user/index.php" afterPath="$PROJECT_DIR$/backend/views/user/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/user/update.php" afterPath="$PROJECT_DIR$/backend/views/user/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/views/user/view.php" afterPath="$PROJECT_DIR$/backend/views/user/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/assets/.gitignore" afterPath="$PROJECT_DIR$/backend/web/assets/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/css/menu.css" afterPath="$PROJECT_DIR$/backend/web/css/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/css/site.css" afterPath="$PROJECT_DIR$/backend/web/css/site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/index-test.php" afterPath="$PROJECT_DIR$/backend/web/index-test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/index.php" afterPath="$PROJECT_DIR$/backend/web/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/js/common.js" afterPath="$PROJECT_DIR$/backend/web/js/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/js/menu.js" afterPath="$PROJECT_DIR$/backend/web/js/menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/robots.txt" afterPath="$PROJECT_DIR$/backend/web/robots.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/AUTHOR.txt" afterPath="$PROJECT_DIR$/backend/web/temp_menu/AUTHOR.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/MIT-license" afterPath="$PROJECT_DIR$/backend/web/temp_menu/MIT-license" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/README.md" afterPath="$PROJECT_DIR$/backend/web/temp_menu/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/accordion-menu.html" afterPath="$PROJECT_DIR$/backend/web/temp_menu/accordion-menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/css/ace-responsive-menu.css" afterPath="$PROJECT_DIR$/backend/web/temp_menu/css/ace-responsive-menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/css/demo.css" afterPath="$PROJECT_DIR$/backend/web/temp_menu/css/demo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/horizontal-menu.html" afterPath="$PROJECT_DIR$/backend/web/temp_menu/horizontal-menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/index.html" afterPath="$PROJECT_DIR$/backend/web/temp_menu/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/js/ace-responsive-menu-min.js" afterPath="$PROJECT_DIR$/backend/web/temp_menu/js/ace-responsive-menu-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/js/ace-responsive-menu.js" afterPath="$PROJECT_DIR$/backend/web/temp_menu/js/ace-responsive-menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/js/jquery-1.10.1.min.js" afterPath="$PROJECT_DIR$/backend/web/temp_menu/js/jquery-1.10.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/temp_menu/vertical-menu.html" afterPath="$PROJECT_DIR$/backend/web/temp_menu/vertical-menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/bootstrap/SetUp.php" afterPath="$PROJECT_DIR$/common/bootstrap/SetUp.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/config/main.php" afterPath="$PROJECT_DIR$/common/config/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/config/.gitignore" afterPath="$PROJECT_DIR$/console/config/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/config/bootstrap.php" afterPath="$PROJECT_DIR$/console/config/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/config/main.php" afterPath="$PROJECT_DIR$/console/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/config/params.php" afterPath="$PROJECT_DIR$/console/config/params.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/config/test.php" afterPath="$PROJECT_DIR$/console/config/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m130524_201442_init.php" afterPath="$PROJECT_DIR$/console/migrations/m130524_201442_init.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m190124_110200_add_verification_token_column_to_user_table.php" afterPath="$PROJECT_DIR$/console/migrations/m190124_110200_add_verification_token_column_to_user_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m200501_183037_add_host_settings_table.php" afterPath="$PROJECT_DIR$/console/migrations/m200501_183037_add_host_settings_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m200504_105901_add_menus_table.php" afterPath="$PROJECT_DIR$/console/migrations/m200504_105901_add_menus_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m200504_110823_add_pages_table.php" afterPath="$PROJECT_DIR$/console/migrations/m200504_110823_add_pages_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m200504_173556_add_categories_pages__table.php" afterPath="$PROJECT_DIR$/console/migrations/m200504_173556_add_categories_pages__table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/migrations/m200504_201158_add_categories_pages_id_to_pages_table.php" afterPath="$PROJECT_DIR$/console/migrations/m200504_201158_add_categories_pages_id_to_pages_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/models/.gitkeep" afterPath="$PROJECT_DIR$/console/models/.gitkeep" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/console/runtime/.gitignore" afterPath="$PROJECT_DIR$/console/runtime/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/assets/AppAsset.php" afterPath="$PROJECT_DIR$/frontend/assets/AppAsset.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/config/main.php" afterPath="$PROJECT_DIR$/frontend/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/layouts/main.php" afterPath="$PROJECT_DIR$/frontend/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/views/site/index.php" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/web/css/site.css" afterPath="$PROJECT_DIR$/frontend/web/css/site.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/widgets/menu/MenuWidget.php" afterPath="$PROJECT_DIR$/frontend/widgets/menu/MenuWidget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/widgets/menu/views/menu.php" afterPath="$PROJECT_DIR$/frontend/widgets/menu/views/menu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/composer.json" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/phive.xml" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/phive.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/phpstan.neon" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/phpstan.neon" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Element.php" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Element.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/File.php" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/File.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Fqsen.php" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Fqsen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Location.php" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Location.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Project.php" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/Project.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/ProjectFactory.php" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common/src/ProjectFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/.travis.yml" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/index.md" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/references/function-list-by-category.md" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/references/function-list-by-category.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/references/function-list-by-name.md" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/references/function-list-by-name.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/topics/migration-from-PHPExcel.md" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/topics/migration-from-PHPExcel.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/topics/recipes.md" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/docs/topics/recipes.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Calculation.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Calculation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Functions.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/Functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/MathTrig.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/MathTrig.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/functionlist.txt" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/functionlist.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Cell/Cell.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Cell/Cell.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xlsx.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xlsx.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/PageSetup.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/PageSetup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php" afterPath="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Worksheet/Worksheet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Escaper.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Escaper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/yaml/Inline.php" afterPath="$PROJECT_DIR$/vendor/symfony/yaml/Inline.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/BaseYii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/BaseYii.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.js" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/assets/yii.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/DynamicModel.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/DynamicModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/console/controllers/BaseMigrateController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/data/Pagination.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/data/Pagination.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRelationTrait.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/ActiveRelationTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Connection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/Query.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/QueryBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/conditions/InConditionBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/conditions/InConditionBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/conditions/LikeConditionBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/conditions/LikeConditionBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/Schema.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/oci/Schema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/sqlite/QueryBuilder.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/db/sqlite/QueryBuilder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/Formatter.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/Formatter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-mssql.sql" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-mssql.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-mysql.sql" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-mysql.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-pgsql.sql" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-pgsql.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-sqlite.sql" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/migrations/schema-sqlite.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/he/yii.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/messages/he/yii.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/EachValidator.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/validators/EachValidator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Response.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Response.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/web/Session.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -191,106 +60,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pages.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/Pages.php">
+      <file leaf-file-name="ServerController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/daemon/ServerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="179" column="6" lean-forward="true" selection-start-line="179" selection-start-column="6" selection-end-line="179" selection-end-column="6" />
+            <state relative-caret-position="475">
+              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
               <folding>
-                <element signature="e#35#43#0#PHP" expanded="true" />
+                <element signature="e#35#67#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m200504_173556_add_categories_pages__table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/migrations/m200504_173556_add_categories_pages__table.php">
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/console/config/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="39" column="89" lean-forward="false" selection-start-line="39" selection-start-column="89" selection-end-line="39" selection-end-column="89" />
+            <state relative-caret-position="152">
+              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/page/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_search.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/_search.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenusSearchForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/MenusSearchForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategorePagesSearchForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/CategorePagesSearchForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoriesPages.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/models/CategoriesPages.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="89" column="10" lean-forward="true" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
-              <folding>
-                <element signature="e#34#42#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/_form.php">
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/console/controllers/ServerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatServer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/daemon/ChatServer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="26" />
+              <folding>
+                <element signature="e#34#80#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -335,6 +154,7 @@
       <find>pageSize</find>
       <find>STATUS_INACTIVE</find>
       <find>css</find>
+      <find>HOST_NAME</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/backend</dir>
@@ -346,57 +166,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/views/address/update.php" />
-        <option value="$PROJECT_DIR$/backend/views/address/create.php" />
-        <option value="$PROJECT_DIR$/backend/views/homeowner/create.php" />
-        <option value="$PROJECT_DIR$/backend/views/homeowner/update.php" />
-        <option value="$PROJECT_DIR$/backend/models/HomeownersSearchForm.php" />
-        <option value="$PROJECT_DIR$/backend/models/Homeowners.php" />
-        <option value="$PROJECT_DIR$/backend/views/homeowner/_form.php" />
-        <option value="$PROJECT_DIR$/backend/web/css/menu.css" />
-        <option value="$PROJECT_DIR$/backend/web/js/menu.js" />
-        <option value="$PROJECT_DIR$/backend/views/profile/view.php" />
-        <option value="$PROJECT_DIR$/backend/modules/rbac/forms/PermissionCreateForm.php" />
-        <option value="$PROJECT_DIR$/backend/models/ProfileCreateForm.php" />
-        <option value="$PROJECT_DIR$/backend/views/profile/index.php" />
-        <option value="$PROJECT_DIR$/backend/models/ProfileSearchForm.php" />
-        <option value="$PROJECT_DIR$/backend/views/address/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/homeowner/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/homeowner/view.php" />
-        <option value="$PROJECT_DIR$/backend/models/HostSettings.php" />
-        <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/common/config/main.php" />
-        <option value="$PROJECT_DIR$/frontend/config/main.php" />
-        <option value="$PROJECT_DIR$/frontend/views/site/offline.php" />
-        <option value="$PROJECT_DIR$/backend/views/profile/_form.php" />
-        <option value="$PROJECT_DIR$/backend/web/css/site.css" />
-        <option value="$PROJECT_DIR$/backend/views/site/host-settings.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
-        <option value="$PROJECT_DIR$/console/migrations/m200501_183037_add_host_settings_table.php" />
-        <option value="$PROJECT_DIR$/console/migrations/m200504_105901_add_menus_table.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/backend/config/main.php" />
-        <option value="$PROJECT_DIR$/backend/views/page/update.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/PageController.php" />
-        <option value="$PROJECT_DIR$/backend/models/PagesSearchForm.php" />
-        <option value="$PROJECT_DIR$/console/migrations/m200504_110823_add_pages_table.php" />
-        <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/frontend/widgets/menu/MenuWidget.php" />
-        <option value="$PROJECT_DIR$/frontend/widgets/menu/views/menu.php" />
-        <option value="$PROJECT_DIR$/console/migrations/m200504_201158_add_categories_pages_id_to_pages_table.php" />
-        <option value="$PROJECT_DIR$/backend/views/page/_form.php" />
-        <option value="$PROJECT_DIR$/backend/models/PageForm.php" />
-        <option value="$PROJECT_DIR$/backend/views/page/view.php" />
-        <option value="$PROJECT_DIR$/console/migrations/m200504_204638_drop_column_page_id_from_categories_pages_table.php" />
-        <option value="$PROJECT_DIR$/console/migrations/m200504_173556_add_categories_pages__table.php" />
-        <option value="$PROJECT_DIR$/backend/views/categore-pages/_form.php" />
-        <option value="$PROJECT_DIR$/backend/views/categore-pages/view.php" />
-        <option value="$PROJECT_DIR$/backend/views/categore-pages/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/categore-pages/_search.php" />
         <option value="$PROJECT_DIR$/backend/models/MenusSearchForm.php" />
         <option value="$PROJECT_DIR$/backend/models/CategorePagesSearchForm.php" />
         <option value="$PROJECT_DIR$/backend/models/Pages.php" />
         <option value="$PROJECT_DIR$/backend/models/CategoriesPages.php" />
+        <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/frontend/widgets/menu/MenuWidget.php" />
+        <option value="$PROJECT_DIR$/frontend/widgets/menu/views/menu.php" />
+        <option value="$PROJECT_DIR$/frontend/web/css/site.css" />
+        <option value="$PROJECT_DIR$/frontend/chat/WebsocketMaster.php" />
+        <option value="$PROJECT_DIR$/frontend/chat/WebsocketWorker.php" />
+        <option value="$PROJECT_DIR$/frontend/chat/WebsocketHandler.php" />
+        <option value="$PROJECT_DIR$/frontend/chat/WebsocketServe.php" />
+        <option value="$PROJECT_DIR$/frontend/web/js/chat.js" />
+        <option value="$PROJECT_DIR$/console/config/main-local.php" />
+        <option value="$PROJECT_DIR$/console/controllers/user.php" />
+        <option value="$PROJECT_DIR$/console/controllers/Chat.php" />
+        <option value="$PROJECT_DIR$/requirements.php" />
+        <option value="$PROJECT_DIR$/console/controllers/Test.php" />
+        <option value="$PROJECT_DIR$/frontend/chat/Chat.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/common/config/main.php" />
+        <option value="$PROJECT_DIR$/frontend/daemons/ChatServer.php" />
+        <option value="$PROJECT_DIR$/console/controllers/Server.php" />
+        <option value="$PROJECT_DIR$/console/controllers/User.php" />
+        <option value="$PROJECT_DIR$/console/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/console/controllers/Ch.php" />
+        <option value="$PROJECT_DIR$/console/controllers/ChController.php" />
+        <option value="$PROJECT_DIR$/frontend/chat/ChatRachet.php" />
+        <option value="$PROJECT_DIR$/frontend/con/EchoServer.php" />
+        <option value="$PROJECT_DIR$/frontend/con/CommandsServer.php" />
+        <option value="$PROJECT_DIR$/frontend/views/site/chat.php" />
+        <option value="$PROJECT_DIR$/frontend/con/ChatServer.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/console/controllers/ChatController.php" />
+        <option value="$PROJECT_DIR$/frontend/web/js/chat2.js" />
+        <option value="$PROJECT_DIR$/frontend/web/js/chat3.js" />
+        <option value="$PROJECT_DIR$/console/controllers/ChatpotController.php" />
+        <option value="$PROJECT_DIR$/frontend/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/frontend/components/ChatHandler.php" />
+        <option value="$PROJECT_DIR$/frontend/views/site/index.php" />
+        <option value="$PROJECT_DIR$/frontend/assets/AppAsset.php" />
+        <option value="$PROJECT_DIR$/frontend/deamons/ChatServer.php" />
+        <option value="$PROJECT_DIR$/common/bootstrap/SetUp.php" />
+        <option value="$PROJECT_DIR$/console/daemon/ChatServer.php" />
+        <option value="$PROJECT_DIR$/frontend/daemon/ChatServer.php" />
+        <option value="$PROJECT_DIR$/frontend/web/js/chatServ.js" />
+        <option value="$PROJECT_DIR$/console/controllers/ServerController.php" />
+        <option value="$PROJECT_DIR$/console/daemon/ServerController.php" />
+        <option value="$PROJECT_DIR$/console/config/main.php" />
+        <option value="$PROJECT_DIR$/frontend/config/main.php" />
+        <option value="$PROJECT_DIR$/frontend/daemon/ServerController.php" />
       </list>
     </option>
   </component>
@@ -408,10 +228,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1166" />
-    <option name="y" value="25" />
-    <option name="width" value="754" />
-    <option name="height" value="1055" />
+    <option name="x" value="930" />
+    <option name="y" value="157" />
+    <option name="width" value="1226" />
+    <option name="height" value="953" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -430,128 +250,13 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="helpers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="address" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="categore-pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="homeowner" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="page" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="profile" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="site" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="widgets" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
@@ -567,25 +272,25 @@
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="console" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="daemon" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
@@ -602,6 +307,12 @@
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -614,7 +325,7 @@
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="daemon" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
@@ -633,14 +344,21 @@
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="widgets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="site" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="widgets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="menu" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
@@ -651,17 +369,23 @@
               <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
               <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bower-asset" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="consik" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="rpcomm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpcomm" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="consik" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="yii2-websocket" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="/media/webndesign/Transcend3/rtiger" />
+    <property name="last_opened_file_path" value="/media/webndesign/Transcend3/=Sites/rpcomm/30.03.2020/rpcomm_archirve_30.03.2020" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -674,19 +398,19 @@
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend/models" />
-      <recent name="$PROJECT_DIR$/backend/helpers" />
-      <recent name="$PROJECT_DIR$/backend/widgets/grid" />
-      <recent name="$PROJECT_DIR$/backend/modules/rbac" />
-      <recent name="$PROJECT_DIR$/backend" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/runtime" />
       <recent name="$PROJECT_DIR$/backend/models" />
       <recent name="$PROJECT_DIR$/backend/modules" />
       <recent name="$PROJECT_DIR$/backend/modules/rbac/entities/_temp" />
       <recent name="$PROJECT_DIR$/backend/modules/rbac" />
-      <recent name="$PROJECT_DIR$/frontend/web/js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/console" />
+      <recent name="$PROJECT_DIR$/console/controllers" />
+      <recent name="$PROJECT_DIR$/backend/models" />
+      <recent name="$PROJECT_DIR$/backend/helpers" />
+      <recent name="$PROJECT_DIR$/backend/widgets/grid" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -782,27 +506,41 @@
       <workItem from="1588451430721" duration="5191000" />
       <workItem from="1588534120531" duration="1686000" />
       <workItem from="1588581878819" duration="9926000" />
-      <workItem from="1588595420034" duration="23567000" />
+      <workItem from="1588595420034" duration="26444000" />
+      <workItem from="1588671060290" duration="2755000" />
+      <workItem from="1588686303791" duration="3169000" />
+      <workItem from="1588758339213" duration="165000" />
+      <workItem from="1588758619274" duration="1911000" />
+      <workItem from="1588764985734" duration="12868000" />
+      <workItem from="1588788919324" duration="9434000" />
+      <workItem from="1588843136756" duration="15614000" />
+      <workItem from="1588862274342" duration="3797000" />
+      <workItem from="1588868871576" duration="975000" />
+      <workItem from="1588871740877" duration="2371000" />
+      <workItem from="1588874719322" duration="769000" />
+      <workItem from="1588875562913" duration="3870000" />
+      <workItem from="1588883977166" duration="1314000" />
+      <workItem from="1588957931897" duration="952000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425358000" />
+    <option name="totallyTimeSpent" value="488199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29275042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27780852" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3430736" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24458875" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -846,303 +584,288 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/views/site/host-settings.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/basic.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1083">
-          <caret line="58" column="76" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="76" />
-          <folding>
-            <marker date="1588587698899" expanded="true" signature="1282:1305" ph="..." />
-          </folding>
+        <state relative-caret-position="277">
+          <caret line="144" column="9" lean-forward="false" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/modules/rbac/controllers/DefaultController.php">
+    <entry file="file://$PROJECT_DIR$/frontend/models/ContactForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3458">
-          <caret line="200" column="7" lean-forward="false" selection-start-line="200" selection-start-column="7" selection-end-line="200" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="114">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m130524_201442_init.php">
+    <entry file="file://$PROJECT_DIR$/vendor/cboden/ratchet/src/Ratchet/ComponentInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="247">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m200501_183037_add_host_settings_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date_c.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="320" column="44" lean-forward="false" selection-start-line="320" selection-start-column="39" selection-end-line="320" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/i18n/Formatter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="179" column="11" lean-forward="false" selection-start-line="179" selection-start-column="11" selection-end-line="179" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/SchemaBuilderTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="214" column="20" lean-forward="false" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="794" column="9" lean-forward="false" selection-start-line="794" selection-start-column="9" selection-end-line="794" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m200504_105901_add_menus_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="30" column="56" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="30" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/AddressController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1302">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/HomeownerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Address.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/paulzi/yii2-nested-sets/NestedSetsBehavior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="320" column="20" lean-forward="false" selection-start-line="320" selection-start-column="20" selection-end-line="320" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/page/update.php">
+    <entry file="file://$PROJECT_DIR$/frontend/views/site/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" column="29" lean-forward="false" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-          <folding />
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/PageController.php">
+    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="95" column="20" lean-forward="false" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="20" />
-          <folding>
-            <element signature="e#40#48#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Profile.php">
+    <entry file="file://$PROJECT_DIR$/common/config/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2660">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/PagesSearchForm.php">
+    <entry file="file://$PROJECT_DIR$/common/config/codeception-local.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m200504_110823_add_pages_table.php">
+    <entry file="file://$PROJECT_DIR$/common/config/params-local.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/BaseActiveRecord.php">
+    <entry file="file://$PROJECT_DIR$/common/config/params.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="674" column="20" lean-forward="false" selection-start-line="674" selection-start-column="20" selection-end-line="674" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/components/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/controllers/UserController.php" />
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="15" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/controllers/Test.php" />
+    <entry file="file://$PROJECT_DIR$/console/controllers/ChController.php" />
+    <entry file="file://$PROJECT_DIR$/frontend/daemon/EchoServer.php" />
+    <entry file="file://$PROJECT_DIR$/console/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/BaseObject.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-377">
-          <caret line="76" column="6" lean-forward="false" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="2128">
+          <caret line="116" column="20" lean-forward="false" selection-start-line="116" selection-start-column="20" selection-end-line="116" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/base/Behavior.php">
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="1292">
+          <caret line="85" column="28" lean-forward="false" selection-start-line="83" selection-start-column="13" selection-end-line="85" selection-end-column="28" />
+          <folding>
+            <element signature="e#41#64#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/AttributeBehavior.php">
+    <entry file="file://$PROJECT_DIR$/console/controllers/class.chathandler.php" />
+    <entry file="file://$PROJECT_DIR$/console/controllers/ChatpotController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="50" column="36" lean-forward="false" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="247">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/behaviors/TimestampBehavior.php">
+    <entry file="file://$PROJECT_DIR$/frontend/daemon/CommandsServer.php" />
+    <entry file="file://$PROJECT_DIR$/frontend/chat/WebsocketWorker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="71" column="43" lean-forward="false" selection-start-line="71" selection-start-column="43" selection-end-line="71" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="342">
+          <caret line="138" column="67" lean-forward="true" selection-start-line="136" selection-start-column="16" selection-end-line="138" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="152" column="28" lean-forward="false" selection-start-line="152" selection-start-column="28" selection-end-line="152" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/widgets/grid/MetersDataDetailView.php">
+    <entry file="file://$PROJECT_DIR$/frontend/chat/WebsocketServe.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/widgets/grid/MetersDataColumn.php">
+    <entry file="file://$PROJECT_DIR$/frontend/chat/WebsocketMaster.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-285">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/widgets/grid/MetersDataGridView.php">
+    <entry file="file://$PROJECT_DIR$/frontend/chat/WebsocketHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-608">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/chat/ChatRachet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/chat/Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-580">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/components/ChatHandler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="83" selection-end-column="48" />
+          <folding>
+            <marker date="1588875943241" expanded="false" signature="1884:1929" ph="..." />
+            <marker date="1588875943241" expanded="false" signature="2059:2069" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="108" column="28" lean-forward="true" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
+        <state relative-caret-position="4275">
+          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/widgets/menu/MenuWidget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#75#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/widgets/menu/views/menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="13" column="15" lean-forward="false" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/page/_form.php">
+    <entry file="file://$PROJECT_DIR$/frontend/assets/AppAsset.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
-          <caret line="16" column="123" lean-forward="false" selection-start-line="16" selection-start-column="123" selection-end-line="16" selection-end-column="123" />
-          <folding>
-            <element signature="e#7#28#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/PageForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1758">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+    <entry file="file://$PROJECT_DIR$/common/bootstrap/SetUp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/consik/yii2-websocket/WebSocketServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="104" column="29" lean-forward="true" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/daemon/ChatServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#33#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/consik/yii2-websocket/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2033">
+            <caret line="368" column="0" lean-forward="false" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/consik/yii2-websocket/LICENSE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/daemon/ServerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/js/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="55" lean-forward="false" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/js/chat2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/js/chat3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1150,124 +873,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/yiisoft/yii2/db/Migration.php">
+    <entry file="file://$PROJECT_DIR$/frontend/views/site/chat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="503" column="20" lean-forward="false" selection-start-line="503" selection-start-column="20" selection-end-line="503" selection-end-column="20" />
+        <state relative-caret-position="38">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/web/js/chatServ.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/controllers/ChatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/daemon/ChatServer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="26" />
           <folding>
-            <marker date="1588417891000" expanded="true" signature="8760:8772" ph="insert into ${$table}... " />
-            <marker date="1588417891000" expanded="true" signature="9356:9368" ph="insert into ${$table}... " />
-            <marker date="1588417891000" expanded="true" signature="12079:12091" ph="delete from " />
-            <marker date="1588417891000" expanded="true" signature="13289:13302" ph="create table... ${$table}" />
-            <marker date="1588417891000" expanded="true" signature="14501:14512" ph="drop table $... " />
+            <element signature="e#34#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m200504_204638_drop_column_page_id_from_categories_pages_table.php">
+    <entry file="file://$PROJECT_DIR$/console/controllers/ServerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        <state relative-caret-position="152">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m200504_201158_add_categories_pages_id_to_pages_table.php">
+    <entry file="file://$PROJECT_DIR$/console/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="152">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/m200504_173556_add_categories_pages__table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="39" column="89" lean-forward="false" selection-start-line="39" selection-start-column="89" selection-end-line="39" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/_form.php">
+    <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/homeowner/view.php">
+    <entry file="file://$PROJECT_DIR$/frontend/daemon/ServerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="42" column="14" lean-forward="false" selection-start-line="39" selection-start-column="11" selection-end-line="42" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/page/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/categore-pages/_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/MenusSearchForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="52" column="33" lean-forward="false" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/CategorePagesSearchForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="61" column="38" lean-forward="false" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Pages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="179" column="6" lean-forward="true" selection-start-line="179" selection-start-column="6" selection-end-line="179" selection-end-column="6" />
+        <state relative-caret-position="475">
+          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
           <folding>
-            <element signature="e#35#43#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/CategoriesPages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="89" column="10" lean-forward="true" selection-start-line="89" selection-start-column="10" selection-end-line="89" selection-end-column="10" />
-          <folding>
-            <element signature="e#34#42#0#PHP" expanded="true" />
+            <element signature="e#35#67#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

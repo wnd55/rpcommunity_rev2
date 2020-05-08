@@ -9,6 +9,7 @@
 namespace common\bootstrap;
 
 
+use frontend\daemon\ChatServer;
 use yii\base\BootstrapInterface;
 use yii\mail\MailerInterface;
 use yii\base\ErrorHandler;
@@ -41,6 +42,13 @@ class SetUp implements BootstrapInterface
             return $app->authManager;
         });
 
+        $container->setSingleton(ChatServer::className(), function () use($app){
+
+            $chat = new ChatServer();
+          return  $chat -> init();
+
+
+        });
 
     }
 

@@ -9,11 +9,15 @@ $params = array_merge(
     require __DIR__ . '/params-local.php'
 );
 
+
+
 return [
     'id' => 'rp-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
 
+    ],
     'controllerNamespace' => 'frontend\controllers',
     'on beforeRequest' => function ($event) {
         $maintenance = HostSettings::findOne(['value' => 'Сервис']);

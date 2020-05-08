@@ -2,6 +2,9 @@
 
 namespace frontend\controllers;
 
+
+use frontend\chat\Chat;
+use frontend\con\ChatServer;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -15,6 +18,9 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use consik\yii2websocket\events\WSClientEvent;
+use consik\yii2websocket\WebSocketServer;
+use Ratchet\ConnectionInterface;
 
 /**
  * Site controller
@@ -75,6 +81,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+//            $chat = new ChatServer();
+//
+//            $chat->init();
+
         return $this->render('index');
     }
 
@@ -259,5 +269,29 @@ class SiteController extends Controller
         return $this->render('offline');
     }
 
+
+    public function actionChat()
+    {
+//        $server = IoServer::factory(
+//
+//            new HttpServer(
+//                new WsServer(
+//                    new Chat()
+//                )
+//            ),
+//            8080
+//        );
+//
+//        $server->run();
+
+        return $this->render('chat');
+    }
+
+
+    public function actionPhpInfo()
+    {
+
+        return phpinfo();
+    }
 
 }

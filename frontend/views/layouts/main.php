@@ -21,6 +21,9 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+
+
+
     <?php $this->head() ?>
 </head>
 <body>
@@ -101,24 +104,13 @@ AppAsset::register($this);
                 <li>
                     <a href="javascript:;">
                         <i class="fa fa-cube" aria-hidden="true"></i>
-                        <span class="title">About Us</span>
+                        <span class="title">Pages</span>
 
                     </a>
                     <!-- Level Two-->
-                    <ul>
-                        <li>
-                            <a href="#">Sub Item One</a>
-                        </li>
-                        <li>
-                            <a href="#">Sub Item Two</a>
-                        </li>
-                        <li>
-                            <a href="#">Sub Item Three</a>
-                        </li>
-                        <li>
-                            <a href="#">Sub Item Four</a>
-                        </li>
-                    </ul>
+
+                   <?= \frontend\widgets\menu\MenuWidget::widget()?>
+
                 </li>
 
                 <li>
@@ -236,9 +228,11 @@ AppAsset::register($this);
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
-</div>
 
+    </div>
+
+
+</div>
 <footer class="footer">
     <div class="container">
         <p class="pull-right">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>

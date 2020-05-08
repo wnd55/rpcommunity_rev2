@@ -157,7 +157,7 @@ AppAsset::register($this);
                             </li>
 
                             <li>
-                                <?= Html::a('Категории страниц', Url::toRoute('/categore-pages')) ?>
+                                <?= Html::a('Категории страниц', Url::toRoute('/category-pages')) ?>
                             </li>
                             <li>
                                 <?= Html::a('Меню', Url::toRoute('/menu')) ?>
