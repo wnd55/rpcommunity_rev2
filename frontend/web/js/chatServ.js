@@ -12,13 +12,13 @@ $(function() {
         }
     };
     chat.onopen = function(e) {
-        $('#response').text("Connection established! Please, set your username.");
+        $('#response').text("Соединение установлено! Пожалуйста, напишите ваше имя.");
     };
     $('#btnSend').click(function() {
         if ($('#message').val()) {
             chat.send( JSON.stringify({'action' : 'chat', 'message' : $('#message').val()}) );
         } else {
-            alert('Enter the message')
+            alert('Сообщение')
         }
     })
 
@@ -26,7 +26,7 @@ $(function() {
         if ($('#username').val()) {
             chat.send( JSON.stringify({'action' : 'setName', 'name' : $('#username').val()}) );
         } else {
-            alert('Enter username')
+            alert('Ваше имя')
         }
     })
 })

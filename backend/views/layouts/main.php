@@ -71,56 +71,29 @@ AppAsset::register($this);
                     </li>
 
                     <li>
-                        <a href="javascript:;">
+                        <a href= <?= Url::toRoute('//metersdata') ?>>
                             <i class="fa fa-crop" aria-hidden="true"></i>
                             <span class="title">Показания воды</span>
                         </a>
-                        <!-- Level Two-->
+
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <span class="title">Категории</span>
+                        </a>
                         <ul>
+
                             <li>
-                                <a href="javascript:;">
-                                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                    Sub Item One
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-database" aria-hidden="true"></i>
-                                    Sub Item Two
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="fa fa-amazon" aria-hidden="true"></i>
-                                    Sub Item Three
-                                </a>
-                                <!-- Level Three-->
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Sub Item Link 1</a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <i class="fa fa-diamond" aria-hidden="true"></i>Sub Item Link 2</a>
-                                        <!-- Level Four-->
-                                        <ul>
-                                            <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i>Sub Item Link
-                                                    1</a></li>
-                                            <li><a href="#"><i class="fa fa-dashcube" aria-hidden="true"></i>Sub Item
-                                                    Link 2</a></li>
-                                            <li><a href="#"><i class="fa fa-dropbox" aria-hidden="true"></i>Sub Item
-                                                    Link 3</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Sub Item Link 3</a>
-                                    </li>
-                                </ul>
+                                <?= Html::a('Страницы', Url::toRoute('/page')) ?>
                             </li>
 
                             <li>
-                                <a href="#">
-                                    <i class="fa fa-database" aria-hidden="true"></i>
-                                    Sub Item Four
-                                </a>
+                                <?= Html::a('Категории страниц', Url::toRoute('/category-pages')) ?>
+                            </li>
+                            <li>
+                                <?= Html::a('Меню', Url::toRoute('/menu')) ?>
                             </li>
                         </ul>
                     </li>
@@ -143,24 +116,8 @@ AppAsset::register($this);
                             <li>
                                 <?= Html::a('Настройки', Url::toRoute('/site/host-settings')) ?>
                             </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span class="title">Категории</span>
-                        </a>
-                        <ul>
-
                             <li>
-                                <?= Html::a('Страницы', Url::toRoute('/page')) ?>
-                            </li>
-
-                            <li>
-                                <?= Html::a('Категории страниц', Url::toRoute('/category-pages')) ?>
-                            </li>
-                            <li>
-                                <?= Html::a('Меню', Url::toRoute('/menu')) ?>
+                                <?= Html::a('Логи', Url::toRoute('/site/logs')) ?>
                             </li>
                         </ul>
                     </li>

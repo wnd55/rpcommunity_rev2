@@ -7,16 +7,16 @@ use yii\helpers\Html;
 /* @var $page backend\models\Pages */
 
 
-$this->title = 'Update Pages: ' . $page->title;
-$this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
+$this->title = 'Изменить страницу: ' . $page->title;
+$this->params['breadcrumbs'][] = ['label' => 'Страницы', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $page->title, 'url' => ['view', 'id' => $page->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Изменить';
 ?>
 <div class="pages-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
+    <?= $this->render('_formUpdate', [
         'model' => $model,
     ]) ?>
 

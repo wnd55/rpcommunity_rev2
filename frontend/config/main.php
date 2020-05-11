@@ -16,6 +16,10 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
+//
+//        'frontend\chat\ChatServer',
+//        'frontend\chat\Chat'
+
 
     ],
     'controllerNamespace' => 'frontend\controllers',

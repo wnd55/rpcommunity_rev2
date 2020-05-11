@@ -8,7 +8,6 @@
 
 namespace backend\models;
 
-use backend\models\Pages;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
 
@@ -30,10 +29,13 @@ class PageForm extends Model
     public $meta_keywords;
     public $slug;
 
-
     private $_page;
 
-
+    /**
+     * PageForm constructor.
+     * @param \backend\models\Pages|null $page
+     * @param array $config
+     */
     public function __construct(Pages $page = null, array $config = [])
     {
         if ($page) {
@@ -74,22 +76,28 @@ class PageForm extends Model
     {
         return [
 
-            [['title', 'meta_title', 'meta_description', 'meta_keywords',], 'required'],
-            [['title', 'meta_title', 'meta_description', 'meta_keywords', 'slug',], 'required', 'on' => 'edit'],
-            [['slug', 'title', 'meta_title', 'meta_description', 'meta_keywords',], 'string', 'max' => 255, 'on' => 'edit'],
-            [['parentId', 'categories_pages_id'], 'integer'],
+            [['title', 'meta_title', 'meta_description', 'meta_keywords', 'categories_pages_id'], 'required'],
+            [['title', 'meta_title', 'meta_description', 'meta_keywords', 'slug', 'categories_pages_id'], 'required', 'on' => 'edit'],
+
             [['title', 'meta_title', 'meta_description', 'meta_keywords',], 'string', 'max' => 255],
+            [['slug', 'title', 'meta_title', 'meta_description', 'meta_keywords',], 'string', 'max' => 255, 'on' => 'edit'],
+
+            [['parentId', 'categories_pages_id'], 'integer'],
+            [['parentId', 'categories_pages_id'], 'integer', 'on' => 'edit'],
+
             [['content'], 'string'],
             [['content'], 'string', 'on' => 'edit'],
+
             [['status',], 'integer'],
             [['status',], 'integer', 'on' => 'edit'],
-            [['title'], 'unique', 'targetClass' => Pages::class,
-                'filter' => $this->_page ? ['<>', 'id', $this->_page->id] : null],
-            [['title'], 'unique', 'targetClass' => Pages::class,
-                'filter' => $this->_page ? ['<>', 'id', $this->_page->id] : null, 'on' => 'edit'],
 
-            [['slug'], 'unique', 'targetClass' => Pages::class,
-                'filter' => $this->_page ? ['<>', 'id', $this->_page->id] : null, 'on' => 'edit']];
+            [['title'], 'unique', 'targetClass' => Pages::class,  'filter' => $this->_page ? ['<>', 'id', $this->_page->id] : null, 'on' => 'edit'],
+            [['title'], 'unique', 'targetClass' => Pages::class, 'filter' => $this->_page ? ['<>', 'id', $this->_page->id] : null,],
+
+            [['slug'], 'unique', 'targetClass' => Pages::class, 'filter' => $this->_page ? ['<>', 'id', $this->_page->id] : null, 'on' => 'edit']
+
+
+        ];
 
     }
 
@@ -101,6 +109,7 @@ class PageForm extends Model
     {
         return [
             'id' => 'ID',
+            'categories_pages_id' => 'Категория',
             'title' => 'Заголовок',
             'slug' => 'Slug',
             'content' => 'Текст',
@@ -124,7 +133,7 @@ class PageForm extends Model
         return ArrayHelper::map(Pages::find()->orderBy('lft')->andWhere($this->_page ? ['<>', 'id', $this->_page->id] : null)->all(), 'id', function (Pages $page) {
 
 
-            return ($page->depth > 1 ? str_repeat('-- ', $page->depth - 1) . ' ' : '') . $page->title;
+            return ($page->depth > 1 ? str_repeat('-- ', $page->depth - 1) . 'Вложенная страница ' : 'Страница верхнего уровня ') . $page->title;
         }
 
         );

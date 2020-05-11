@@ -16,15 +16,15 @@ use yii\filters\VerbFilter;
  */
 class PageController extends Controller
 {
-   public $pages;
+    public $pages;
 
-   public function __construct($id, $module, Pages $pages, array $config = [])
-   {
-       parent::__construct($id, $module, $config);
+    public function __construct($id, $module, Pages $pages, array $config = [])
+    {
+        parent::__construct($id, $module, $config);
 
-       $this->pages = $pages;
+        $this->pages = $pages;
 
-   }
+    }
 
     /**
      * {@inheritdoc}
@@ -80,8 +80,13 @@ class PageController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
-            $page = $this->pages->create($model);
-            return $this->redirect(['view', 'id' => $page->id]);
+            try {
+                $page = $this->pages->create($model);
+                return $this->redirect(['view', 'id' => $page->id]);
+            } catch (\DomainException $e) {
+                Yii::$app->errorHandler->logException($e);
+                Yii::$app->session->setFlash('error', $e->getMessage());
+            }
         }
 
         return $this->render('create', [
@@ -103,9 +108,15 @@ class PageController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
-            $this->pages->edit($id, $model);
+            try {
 
-            return $this->redirect(['view', 'id' => $page->id]);
+                $this->pages->edit($id, $model);
+                return $this->redirect(['view', 'id' => $page->id]);
+
+            } catch (\DomainException $e) {
+                Yii::$app->errorHandler->logException($e);
+                Yii::$app->session->setFlash('error', $e->getMessage());
+            }
         }
 
         return $this->render('update', [
@@ -123,8 +134,32 @@ class PageController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        try {
+            $this->pages->remove($id);
+        } catch (\DomainException $e) {
+            Yii::$app->errorHandler->logException($e);
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['index']);
+    }
 
+    /**
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionMoveUp($id)
+    {
+        $this->pages->moveUp($id);
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionMoveDown($id)
+    {
+        $this->pages->moveDown($id);
         return $this->redirect(['index']);
     }
 
@@ -143,4 +178,5 @@ class PageController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

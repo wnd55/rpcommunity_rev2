@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\CategoriesPages */
 
-$this->title = 'Create Categories Pages';
-$this->params['breadcrumbs'][] = ['label' => 'Categories Pages', 'url' => ['index']];
+$this->title = 'Создать категорию страниц';
+$this->params['breadcrumbs'][] = ['label' => 'Категории страниц', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="categories-pages-create">

@@ -1,5 +1,5 @@
 <?php
-namespace frontend\daemon;
+namespace frontend\chat;
 
 use consik\yii2websocket\events\WSClientEvent;
 use consik\yii2websocket\WebSocketServer;

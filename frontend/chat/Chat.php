@@ -1,12 +1,12 @@
 <?php
-namespace frontend\daemon;
+namespace frontend\chat;
 
 
-use yii\base\BootstrapInterface;
-use frontend\daemon\ChatServer;
+
 use consik\yii2websocket\WebSocketServer;
+use yii\base\BootstrapInterface;
 
-class ServerController implements BootstrapInterface
+class Chat implements BootstrapInterface
 {
 
 
@@ -27,6 +27,8 @@ class ServerController implements BootstrapInterface
         });
 
         $server->start();
+
+
 
     }
 

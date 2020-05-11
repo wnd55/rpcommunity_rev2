@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\CategoryPagesSearchForm */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Categories Pages';
+$this->title = 'Категории страниц';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="categories-pages-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Categories Pages', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать категорию страниц', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

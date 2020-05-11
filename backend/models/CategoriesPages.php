@@ -63,8 +63,9 @@ class CategoriesPages extends \yii\db\ActiveRecord
             [['title', 'slug', 'meta_title', 'meta_description', 'meta_keywords',], 'required'],
             [['content'], 'string'],
             [['parent', 'status',], 'integer'],
-            [['title', 'slug', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
-            [['slug'], 'unique'],
+            [['title', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
+            [['title'], 'unique',]
+
         ];
     }
 
@@ -75,18 +76,18 @@ class CategoriesPages extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
+            'title' => 'Заголовок',
             'slug' => 'Slug',
-            'content' => 'Content',
-            'parent' => 'Parent',
-            'status' => 'Status',
+            'content' => 'Содержание',
+            'parent' => 'Родительская категория',
+            'status' => 'Статус',
             'meta_title' => 'Meta Title',
             'meta_description' => 'Meta Description',
             'meta_keywords' => 'Meta Keywords',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
+            'created_at' => 'Дата создания',
+            'updated_at' => 'Дата изменения',
+            'created_by' => 'Создал',
+            'updated_by' => 'Изменил',
         ];
     }
 

@@ -2,10 +2,12 @@
 
 namespace backend\controllers;
 
+use backend\models\SystemLog;
 use backend\modules\rbac\entities\AuthAssignment;
 use Yii;
 use common\models\User;
 use backend\models\UsersSearchForm;
+use yii\data\ActiveDataProvider;
 use yii\helpers\VarDumper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -179,4 +181,6 @@ class UserController extends Controller
 
 
     }
+
+
 }

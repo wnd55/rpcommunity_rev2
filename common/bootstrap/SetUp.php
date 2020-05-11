@@ -42,13 +42,13 @@ class SetUp implements BootstrapInterface
             return $app->authManager;
         });
 
-        $container->setSingleton(ChatServer::className(), function () use($app){
-
-            $chat = new ChatServer();
-          return  $chat -> init();
-
-
-        });
+//        $container->setSingleton(ChatServer::className(), function () use($app){
+//
+//
+//
+//
+//
+//        });
 
     }
 

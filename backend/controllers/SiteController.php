@@ -3,12 +3,16 @@
 namespace backend\controllers;
 
 use backend\models\HostSettings;
+use backend\models\LogsSearchForm;
+use backend\models\SystemLog;
 use Yii;
 use yii\base\Model;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+
 
 /**
  * Site controller
@@ -29,7 +33,8 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'host-settings', 'delete-setting'],
+                        'actions' => ['logout', 'index', 'host-settings',
+                            'delete-setting', 'logs', 'view-log', 'delete-log', 'delete-all-logs'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
@@ -39,7 +44,9 @@ class SiteController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
-                    'delete-setting' => ['post']
+                    'delete-setting' => ['post'],
+                    'delete-log' => ['post'],
+                    'delete-all-logs' => ['post'],
                 ],
             ],
         ];
@@ -153,4 +160,55 @@ class SiteController extends Controller
     }
 
 
+    /**
+     * @return string
+     */
+    public function actionLogs()
+    {
+        $logsSearch = new LogsSearchForm();
+
+        $dataProvider = $logsSearch->search(Yii::$app->request->queryParams);
+
+        return $this->render('logs', [
+
+            'dataProvider' => $dataProvider,
+            'logsSearch' => $logsSearch
+        ]);
+
+    }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    public function actionViewLog($id)
+    {
+
+        $log = SystemLog::findOne($id);
+
+        return $this->render('view-log', ['model' => $log]);
+
+    }
+
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     */
+    public function actionDeleteLog($id)
+    {
+
+        $log = SystemLog::findOne($id);
+
+         $log->delete();
+
+       return $this->redirect(['logs']);
+
+    }
+
+    public function actionDeleteAllLogs()
+    {
+        SystemLog::deleteAll();
+
+        return $this->redirect(['index']);
+    }
 }

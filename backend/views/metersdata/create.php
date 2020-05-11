@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Pages */
+/* @var $model backend\models\Metersdata */
 
-$this->title = 'Создать страницу';
-$this->params['breadcrumbs'][] = ['label' => 'Страницы', 'url' => ['index']];
+$this->title = 'Create Metersdata';
+$this->params['breadcrumbs'][] = ['label' => 'Metersdatas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="pages-create">
+<div class="metersdata-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

@@ -50,61 +50,6 @@ class Pages extends \yii\db\ActiveRecord
         return 'pages';
     }
 
-
-    public function behaviors()
-    {
-        return [
-            NestedSetsBehavior::class,
-            TimestampBehavior::class,
-            BlameableBehavior::class,
-            'slug' => [
-                'class' => SluggableBehavior::class,
-                'attribute' => 'title',
-                'ensureUnique' => true,
-                'immutable' => false
-            ]
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
-    {
-        return [
-            [['title', 'meta_title', 'meta_description', 'meta_keywords',], 'required'],
-            [['content'], 'string'],
-            [['status','categories_pages_id'], 'integer'],
-            [['title',], 'unique'],
-            [['title', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
-
-        ];
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'title' => 'Title',
-            'slug' => 'Slug',
-            'content' => 'Content',
-            'status' => 'Status',
-            'meta_title' => 'Meta Title',
-            'meta_description' => 'Meta Description',
-            'meta_keywords' => 'Meta Keywords',
-            'lft' => 'Lft',
-            'rgt' => 'Rgt',
-            'depth' => 'Depth',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
-        ];
-    }
-
     /**
      * @param \backend\models\PageForm $form
      * @return static
@@ -126,7 +71,7 @@ class Pages extends \yii\db\ActiveRecord
 
         $page->appendTo($parent);
 
-        if(!$page->save()){
+        if (!$page->save()) {
 
             throw new ErrorException('Ошибка сохранения');
 
@@ -136,19 +81,88 @@ class Pages extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+
+            [['title', 'meta_title', 'meta_description', 'meta_keywords', 'categories_pages_id'], 'required'],
+
+
+            [['title', 'meta_title', 'meta_description', 'meta_keywords',], 'string', 'max' => 255],
+
+
+            [['parentId', 'categories_pages_id'], 'integer'],
+
+
+            [['content'], 'string'],
+
+
+            [['status',], 'integer'],
+
+
+            [['title'], 'unique', 'targetClass' => Pages::class,],
+
+
+        ];
+
+    }
+
+    public function behaviors()
+    {
+        return [
+            NestedSetsBehavior::class,
+            TimestampBehavior::class,
+            BlameableBehavior::class,
+            'slug' => [
+                'class' => SluggableBehavior::class,
+                'attribute' => 'title',
+                'ensureUnique' => true,
+                'immutable' => false
+            ]
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'title' => 'Заголовок',
+            'slug' => 'Slug',
+            'content' => 'Содержание',
+            'status' => 'Статус',
+            'meta_title' => 'Meta Title',
+            'meta_description' => 'Meta Description',
+            'meta_keywords' => 'Meta Keywords',
+            'lft' => 'Lft',
+            'rgt' => 'Rgt',
+            'depth' => 'Depth',
+            'created_at' => 'Дата создания',
+            'updated_at' => 'Дата изменения',
+            'created_by' => 'Создал',
+            'updated_by' => 'Изменил',
+        ];
+    }
+
+    /**
      * @param $id
      * @param \backend\models\PageForm $form
      * @throws ErrorException
      */
     public function edit($id, PageForm $form)
     {
-        $page =  Pages::findOne($id);
+        $page = Pages::findOne($id);
         $this->assertIsNotRoot($page);
 
         $page->title = $form->title;
         $page->content = $form->content;
         $page->status = $form->status;
         $page->categories_pages_id = $form->categories_pages_id;
+        $page->slug = $form->slug;
         $page->meta_title = $form->meta_title;
         $page->meta_description = $form->meta_description;
         $page->meta_keywords = $form->meta_keywords;
@@ -158,12 +172,13 @@ class Pages extends \yii\db\ActiveRecord
             $page->appendTo($parent);
         }
 
-        if(!$page->save()){
+        if (!$page->save(false)) {
 
             throw new ErrorException('Ошибка сохранения');
 
         }
     }
+
     /**
      * @param Pages $page
      */
@@ -171,7 +186,50 @@ class Pages extends \yii\db\ActiveRecord
     private function assertIsNotRoot(Pages $page)
     {
         if ($page->isRoot()) {
-            throw new \DomainException('Unable to manage the root category.');
+            throw new \DomainException('Невозможно управлять корневой категорией');
+        }
+    }
+
+    /**
+     * @param $id
+     */
+    public function remove($id)
+    {
+        $page = Pages::findOne($id);
+        $this->assertIsNotRoot($page);
+
+        if (!$page->delete()) {
+            throw new \RuntimeException('Ошибка удаления');
+        }
+    }
+
+    /**
+     * @param $id
+     */
+    public function moveUp($id)
+    {
+        $page = Pages::findOne($id);
+        $this->assertIsNotRoot($page);
+        if ($prev = $page->prev) {
+            $page->insertBefore($prev);
+        }
+        if (!$page->save()) {
+            throw new \RuntimeException('Ошибка сохранения');
+        }
+    }
+
+    /**
+     * @param $id
+     */
+    public function moveDown($id)
+    {
+        $page = Pages::findOne($id);
+        $this->assertIsNotRoot($page);
+        if ($next = $page->next) {
+            $page->insertAfter($next);
+        }
+        if (!$page->save()) {
+            throw new \RuntimeException('Ошибка сохранения');
         }
     }
 
