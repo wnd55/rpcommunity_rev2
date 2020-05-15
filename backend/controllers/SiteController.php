@@ -205,6 +205,9 @@ class SiteController extends Controller
 
     }
 
+    /**
+     * @return \yii\web\Response
+     */
     public function actionDeleteAllLogs()
     {
         SystemLog::deleteAll();

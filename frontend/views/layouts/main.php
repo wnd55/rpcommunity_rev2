@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
 use yii\helpers\Html;
@@ -9,6 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use \frontend\widgets\menu\MenuWidget;
 
 AppAsset::register($this);
 ?>
@@ -21,7 +23,6 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-
 
 
     <?php $this->head() ?>
@@ -87,7 +88,7 @@ AppAsset::register($this);
                 <a class="navbar-brand" href="/admin">ТСЖ Рублевское Предместье 4/1</a>
             </div>
             <div class="menu-toggle">
-                <h3><?=Yii::$app->name?></h3>
+                <h3><?= Yii::$app->name ?></h3>
                 <button type="button" id="menu-btn">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -107,9 +108,9 @@ AppAsset::register($this);
                         <span class="title">Pages</span>
 
                     </a>
-                    <!-- Level Two-->
 
-                   <?= \frontend\widgets\menu\MenuWidget::widget()?>
+
+                    <?= MenuWidget::widget() ?>
 
                 </li>
 
@@ -118,7 +119,7 @@ AppAsset::register($this);
                         <i class="fa fa-crop" aria-hidden="true"></i>
                         <span class="title">4 Level Menu</span>
                     </a>
-                    <!-- Level Two-->
+
                     <ul>
                         <li>
                             <a href="javascript:;">
@@ -145,9 +146,12 @@ AppAsset::register($this);
                                         <i class="fa fa-diamond" aria-hidden="true"></i>Sub Item Link 2</a>
                                     <!-- Level Four-->
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i>Sub Item Link 1</a></li>
-                                        <li><a href="#"><i class="fa fa-dashcube" aria-hidden="true"></i>Sub Item Link 2</a></li>
-                                        <li><a href="#"><i class="fa fa-dropbox" aria-hidden="true"></i>Sub Item Link 3</a></li>
+                                        <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i>Sub Item Link
+                                                1</a></li>
+                                        <li><a href="#"><i class="fa fa-dashcube" aria-hidden="true"></i>Sub Item Link 2</a>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-dropbox" aria-hidden="true"></i>Sub Item Link 3</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Sub Item Link 3</a></li>
@@ -211,15 +215,14 @@ AppAsset::register($this);
                         <i class="fa fa-envelope"></i>
                         <span class="title">
                         <?= Html::beginForm(['/site/logout'], 'post'); ?>
-<!--                        --><?//= Html::submitButton('Выход (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']); ?>
-                        <?= Html::endForm(); ?>
+                            <!--                        --><? //= Html::submitButton('Выход (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']); ?>
+                            <?= Html::endForm(); ?>
                     </span>
                     </a>
                 </li>
             </ul>
         </div>
     </nav>
-
 
 
     <div class="container">

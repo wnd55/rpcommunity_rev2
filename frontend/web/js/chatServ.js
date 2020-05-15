@@ -14,6 +14,11 @@ $(function() {
     chat.onopen = function(e) {
         $('#response').text("Соединение установлено! Пожалуйста, напишите ваше имя.");
     };
+
+    chat.onclose = function (e) {
+
+        $('#response').text("Чат будет доступен позже");
+    }
     $('#btnSend').click(function() {
         if ($('#message').val()) {
             chat.send( JSON.stringify({'action' : 'chat', 'message' : $('#message').val()}) );

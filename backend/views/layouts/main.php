@@ -81,7 +81,7 @@ AppAsset::register($this);
                     <li>
                         <a href="#">
                             <i class="fa fa-heart" aria-hidden="true"></i>
-                            <span class="title">Категории</span>
+                            <span class="title">Страницы</span>
                         </a>
                         <ul>
 

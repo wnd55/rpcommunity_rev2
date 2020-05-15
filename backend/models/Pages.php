@@ -89,21 +89,15 @@ class Pages extends \yii\db\ActiveRecord
 
             [['title', 'meta_title', 'meta_description', 'meta_keywords', 'categories_pages_id'], 'required'],
 
-
             [['title', 'meta_title', 'meta_description', 'meta_keywords',], 'string', 'max' => 255],
-
 
             [['parentId', 'categories_pages_id'], 'integer'],
 
-
             [['content'], 'string'],
-
 
             [['status',], 'integer'],
 
-
             [['title'], 'unique', 'targetClass' => Pages::class,],
-
 
         ];
 
