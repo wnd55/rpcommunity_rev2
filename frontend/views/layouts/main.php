@@ -5,11 +5,13 @@
 /* @var $content string */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+
 use \frontend\widgets\menu\MenuWidget;
 
 AppAsset::register($this);
@@ -21,9 +23,25 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
-
 
     <?php $this->head() ?>
 </head>
@@ -31,61 +49,61 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Контакт', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-
-        $menuItems[] = [
-            'label' => 'Документы ТСЖ', 'url' => ['site/documents'],
-            'items' => [
-                ['label' => 'Учредительные документы', 'url' => ['site/documents' . '#constituent']],
-                ['label' => 'Устав', 'url' => ['site/documents' . '#articles']],
-                ['label' => 'Правила проживания', 'url' => ['site/documents' . '#rules']],
-            ],
-        ];
-
-        $menuItems[] = [
-            'label' => 'Личный кабинет',
-            'items' => [
-                ['label' => 'Профиль', 'url' => ['/profile/index'],],
-                ['label' => 'Счетчики воды', 'url' => ['/water-meter/index'],],
-                ['label' => 'Показания воды', 'url' => ['/meters-data/index'],],
-            ],
-        ];
-
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+    <!--    --><?php
+    //    NavBar::begin([
+    //        'brandLabel' => Yii::$app->name,
+    //        'brandUrl' => Yii::$app->homeUrl,
+    //        'options' => [
+    //            'class' => 'navbar-inverse navbar-fixed-top',
+    //        ],
+    //    ]);
+    //    $menuItems = [
+    //        ['label' => 'Home', 'url' => ['/site/index']],
+    //        ['label' => 'Контакт', 'url' => ['/site/contact']],
+    //    ];
+    //    if (Yii::$app->user->isGuest) {
+    //        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+    //        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+    //    } else {
+    //
+    //        $menuItems[] = [
+    //            'label' => 'Документы ТСЖ', 'url' => ['site/documents'],
+    //            'items' => [
+    //                ['label' => 'Учредительные документы', 'url' => ['site/documents' . '#constituent']],
+    //                ['label' => 'Устав', 'url' => ['site/documents' . '#articles']],
+    //                ['label' => 'Правила проживания', 'url' => ['site/documents' . '#rules']],
+    //            ],
+    //        ];
+    //
+    //        $menuItems[] = [
+    //            'label' => 'Личный кабинет',
+    //            'items' => [
+    //                ['label' => 'Профиль', 'url' => ['/profile/index'],],
+    //                ['label' => 'Счетчики воды', 'url' => ['/water-meter/index'],],
+    //                ['label' => 'Показания воды', 'url' => ['/meters-data/index'],],
+    //            ],
+    //        ];
+    //
+    //        $menuItems[] = '<li>'
+    //            . Html::beginForm(['/site/logout'], 'post')
+    //            . Html::submitButton(
+    //                'Logout (' . Yii::$app->user->identity->username . ')',
+    //                ['class' => 'btn btn-link logout']
+    //            )
+    //            . Html::endForm()
+    //            . '</li>';
+    //    }
+    //    echo Nav::widget([
+    //        'options' => ['class' => 'navbar-nav navbar-right'],
+    //        'items' => $menuItems,
+    //    ]);
+    //    NavBar::end();
+    //    ?>
 
     <nav class="amp-navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/admin">ТСЖ Рублевское Предместье 4/1</a>
+                <a class="navbar-brand" href="/">ТСЖ Рублевское Предместье 4/1</a>
             </div>
             <div class="menu-toggle">
                 <h3><?= Yii::$app->name ?></h3>
@@ -96,16 +114,11 @@ AppAsset::register($this);
                 </button>
             </div>
             <ul id="ampMenu" class="amp-responsive-menu" data-menu-style="horizontal">
+
                 <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="title">Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-cube" aria-hidden="true"></i>
-                        <span class="title">Pages</span>
+                    <a href="#">
+                        <i class="fa fa-info" aria-hidden="true"></i>
+                        <span class="title">Информация</span>
 
                     </a>
 
@@ -113,113 +126,76 @@ AppAsset::register($this);
                     <?= MenuWidget::widget() ?>
 
                 </li>
-
                 <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-crop" aria-hidden="true"></i>
-                        <span class="title">4 Level Menu</span>
-                    </a>
-
-                    <ul>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                                Sub Item One
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-database" aria-hidden="true"></i>
-                                Sub Item Two
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-amazon" aria-hidden="true"></i>
-                                Sub Item Three
-                            </a>
-                            <!-- Level Three-->
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Sub Item Link 1</a></li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <i class="fa fa-diamond" aria-hidden="true"></i>Sub Item Link 2</a>
-                                    <!-- Level Four-->
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-trash" aria-hidden="true"></i>Sub Item Link
-                                                1</a></li>
-                                        <li><a href="#"><i class="fa fa-dashcube" aria-hidden="true"></i>Sub Item Link 2</a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-dropbox" aria-hidden="true"></i>Sub Item Link 3</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>Sub Item Link 3</a></li>
-                            </ul>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-database" aria-hidden="true"></i>
-                                Sub Item Four
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="" href="javascript:;">
-                        <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                        <span class="title">Services</span>
-
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="#">Sub Item One
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">Sub Item Two
-                            </a>
-                            <ul>
-                                <li><a href="#">Sub Item Link 1</a></li>
-                                <li><a href="#">Sub Item Link 2</a></li>
-                                <li><a href="#">Sub Item Link 3</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:;">Sub Item Three
-                            </a>
-                            <ul>
-                                <li><a href="#">Sub Item Link 1</a></li>
-                                <li><a href="#">Sub Item Link 1</a></li>
-                                <li><a href="#">Sub Item Link 1</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Sub Item Four
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:;">
+                    <a href= <?= Url::toRoute('/site/contact') ?>>
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <span class="title">Contact Us</span>
+                        <span class="title">Контакты</span>
                     </a>
+
                 </li>
+                <?php if (Yii::$app->user->isGuest): ?>
+
+                    <li>
+                        <a href= <?= Url::toRoute('/site/signup') ?>>
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                            <span class="title">Регистрация</span>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href= <?= Url::toRoute('/site/login') ?>>
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <span class="title">Вход</span>
+                        </a>
+
+                    </li>
+
+                <?php else: ?>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="title">Аккаунт</span>
+                        </a>
+
+                        <ul>
+                            <li>
+                                <?= Html::a('Профиль', Url::toRoute('/profile/view')) ?>
+                            </li>
+                            <li>
+                                <?= Html::a('Счётчики воды', Url::toRoute('/water-meter')) ?>
+                            </li>
+                            <li>
+                                <?= Html::a('Показания воды', Url::toRoute('/meters-data')) ?>
+                            </li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>
+                        <a href= <?= Url::toRoute('/site/documents') ?>>
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <span class="title">Документы</span>
+                        </a>
+
+                    </li>
 
 
-                <li class="last ">
-                    <a href="#">
-                        <i class="fa fa-envelope"></i>
-                        <span class="title">
+                    <li class="last ">
+                        <a href="#">
+                            <i class="fa fa-key"></i>
+                            <span class="title">
                         <?= Html::beginForm(['/site/logout'], 'post'); ?>
-                            <!--                        --><? //= Html::submitButton('Выход (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']); ?>
-                            <?= Html::endForm(); ?>
+                        <?= Html::submitButton('Выход (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']); ?>
+                        <?= Html::endForm(); ?>
                     </span>
-                    </a>
-                </li>
+                        </a>
+                    </li>
+
+                <?php endif; ?>
+
+
             </ul>
         </div>
     </nav>
@@ -243,6 +219,7 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>

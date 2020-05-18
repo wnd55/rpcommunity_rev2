@@ -77,12 +77,18 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-//            $chat = new ChatServer();
-//
-//            $chat->init();
 
         return $this->render('index');
     }
+
+    /**
+     * @return string
+     */
+    public function actionDocuments()
+    {
+        return $this->render('documents');
+    }
+
 
     /**
      * Logs in a user.

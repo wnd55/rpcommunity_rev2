@@ -160,7 +160,7 @@ AppAsset::register($this);
 <script type="text/javascript">
     $(document).ready(function () {
         $("#ampMenu").menu({
-            resizeWidth: '768', // Set the same in Media query
+            resizeWidth: '1200', // Set the same in Media query
             animationSpeed: 'fast', //slow, medium, fast
             accoridonExpAll: false //Expands all the accordion menu on click
         });

@@ -122,6 +122,12 @@ a.desc:after {
     outline: none;
 }
 
+.btn{
+
+    font-size: 15px;
+}
+
+
 /*menu*/
 
 nav.amp-navbar-fixed-top {

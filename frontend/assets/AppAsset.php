@@ -13,13 +13,16 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+        'css/menu.css',
     ];
     public $js = [
-
-       'js/chatServ.js',
+        'js/common.js',
+        'js/menu.js',
+        'js/websocketChat.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'backend\assets\FontAwesomeAsset',
     ];
 }

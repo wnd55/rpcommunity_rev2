@@ -5,7 +5,7 @@
         //Plugin's default options
         var defaults = {
 
-            resizeWidth: '999',
+            resizeWidth: '1200',
             animationSpeed: 'fast',
             accoridonExpAll: false
         };
@@ -42,7 +42,7 @@
             var w = $(window).innerWidth();
 
             if (w <= $resizeWidth) {
-
+                $(this).addClass('collapse');
                 $menu.find('li.menu-active').removeClass('menu-active');
                 $menu.find('ul.slide').removeClass('slide').removeAttr('style');
                 $menu.addClass('collapse hide-menu');
@@ -72,16 +72,6 @@
         $('#menu-btn').click(function () {
             $menu.slideToggle().toggleClass('hide-menu');
         });
-
-
-        //TODO
-        // $('ul#ampMenu').on('click', 'a',function () {
-        //
-        //   var span = $('span.title');
-        //
-        //     span.addClass('amp-active-border');
-        // });
-
 
 
         return this.each(function () {

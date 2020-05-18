@@ -9,56 +9,15 @@ use yii\base\Widget;
 use yii\data\ActiveDataProvider;
 use yii\debug\models\timeline\DataProvider;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+use yii\helpers\VarDumper;
 
 /**
  * This is the model class for table "pages".
- *
- * @property int $id
- * @property int categories_pages_id
- * @property string $title
- * @property string $slug
- * @property string|null $content
- * @property int|null $status
- * @property string $meta_title
- * @property string $meta_description
- * @property string $meta_keywords
- * @property int $lft
- * @property int $rgt
- * @property int $depth
- * @property int $created_at
- * @property int $updated_at
- * @property int $created_by
- * @property int $updated_by
- * @property Pages $parent
- * @property Pages[] $parents
- * @property Pages[] $children
- * @property Pages $prev
- * @property Pages $next
  * @mixin NestedSetsBehavior
  */
 class MenuWidget extends Widget
 {
-
-
-    /**
-     * @var string
-     */
-    public $leftAttribute = 'lft';
-
-    /**
-     * @var string
-     */
-    public $depthAttribute = 'depth';
-
-    /**
-     * @var string
-     */
-    public $labelAttribute = 'name';
-
-    /**
-     * @var string
-     */
-    public $childrenOutAttribute = 'children';
 
 
     public function run()
@@ -68,58 +27,51 @@ class MenuWidget extends Widget
 
         $pages = Pages::find()->where(['categories_pages_id' => 1])->orderBy('lft')->asArray()->all();
 
-        return $this->tree($pages);
+        return $this->newTree($pages);
     }
 
-
     /**
-     * Построение дерева Nested Sets в виде массива
-     *
-     * @param array $collection
-     * @return array
+     * @param $pages
      */
-    public function tree(array $collection)
+
+    public function newTree($pages)
     {
-
-        $trees = []; // Дерево
-
-        if (count($collection) > 0) {
+        $tree = array();
+        $stack = array();
 
 
-            // Узел. Используется для создания иерархии
-            $stack = array();
+        foreach ($pages as $page) {
 
-            foreach ($collection as $node) {
-                $item = $node;
-                $item[$this->childrenOutAttribute] = array();
+            $item = $page;
 
-                // Количество элементов узла
-                $l = count($stack);
+            $item['children'] = array();
 
-                // Проверка имеем ли мы дело с разными уровнями
-                while ($l > 0 && $stack[$l - 1][$this->depthAttribute] >= $item[$this->depthAttribute]) {
-                    array_pop($stack);
-                    $l--;
-                }
+            $l = count($stack);
 
-                // Если это корень
-                if ($l === 0) {
-                    // Создание корневого элемента
-                    $i = count($trees);
-                    $trees[$i] = $item;
-                    $stack[] = &$trees[$i];
+            while ($l > 0 && (int)$stack[$l - 1]['depth'] >= (int)$item['depth']) {
 
-                } else {
-                    // Добавление элемента в родительский
-                    $i = count($stack[$l - 1][$this->childrenOutAttribute]);
-                    $stack[$l - 1][$this->childrenOutAttribute][$i] = $item;
-                    $stack[] = &$stack[$l - 1][$this->childrenOutAttribute][$i];
-                }
+                array_pop($stack);
+                $l--;
             }
+
+            if ($l === 0) {
+
+                $i = count($tree);
+                $tree[$i] = $item;
+                $stack[] = &$tree[$i];
+
+
+            } else {
+                $i = count($stack[$l - 1]['children']);
+                $stack[$l - 1]['children'][$i] = $item;
+                $stack[] = &$stack[$l - 1]['children'][$i];
+            }
+
         }
 
 
-        return $this->buildMenu($trees);
+        // VarDumper::dump($tree, 20, true);die();
+        return $this->buildMenu($tree);
     }
 
     /**
@@ -130,7 +82,7 @@ class MenuWidget extends Widget
         echo '<ul>';
         foreach ($array as $item) {
             echo '<li>';
-            echo $item['title'];
+            echo Html::a($item['title']);
             if (!empty($item['children'])) {
                 $this->buildMenu($item['children']);
             }

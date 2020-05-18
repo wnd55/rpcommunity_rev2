@@ -41,6 +41,11 @@ body, html, html a {
     font-style: italic;
 }
 
+.btn{
+
+    font-size: 15px;
+}
+
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
     position: relative;
@@ -325,6 +330,72 @@ h1{
 
     font-size: 1.5em;
 
+}
+
+
+
+/*menu*/
+
+nav.amp-navbar-fixed-top {
+
+    /*top: 0;*/
+    border-width: 0 0 1px;
+    background-color: #150131;
+    border-color: #080808;
+    min-height: 50px;
+    margin-bottom: 20px;
+    position: fixed;
+    padding: 3px 0px;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+
+}
+
+.navbar-brand {
+
+    padding: 18px 15px 15px;
+}
+
+.menu-toggle a {
+
+    color: #c0c0c0;
+    font-size: 1.2em;
+}
+
+a.navbar-brand {
+
+    color: #c0c0c0;
+    font-size: 1.5em;
+
+}
+
+a.navbar-brand:hover {
+
+    color: #e9e9e9;
+
+}
+
+#ampMenu form {
+
+    display: inline-block;
+
+}
+
+.amp-responsive-menu > li.last a {
+
+    padding: 12px 0;
+
+}
+
+.amp-responsive-menu > li .btn-link {
+
+    color: #c0c0c0;
+}
+
+.amp-responsive-menu li.menu-active .btn-link {
+
+    color: #fff;
 }
 
 
