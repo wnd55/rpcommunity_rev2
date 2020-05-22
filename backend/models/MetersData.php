@@ -2,10 +2,11 @@
 
 namespace backend\models;
 
+use common\models\User;
 use Yii;
 
 /**
- * This is the model class for table "metersdata".
+ * This is the model class for table "meters-data".
  *
  * @property int $idmetersdata
  * @property int $user_id
@@ -29,7 +30,7 @@ use Yii;
  *
  * @property User $user
  */
-class Metersdata extends \yii\db\ActiveRecord
+class MetersData extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -73,10 +74,10 @@ class Metersdata extends \yii\db\ActiveRecord
             'wmhot3' => 'ГВС3',
             'hot3' => 'Показания',
             'date' => 'Дата ',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
+            'created_at' => 'Дата создания',
+            'updated_at' => 'Дата изменения',
+            'created_by' => 'Создано',
+            'updated_by' => 'Изменено',
         ];
     }
 
@@ -90,13 +91,5 @@ class Metersdata extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
-    /**
-     * Gets query for [[Metersydataalls]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getMetersydataalls()
-    {
-        return $this->hasMany(Metersydataall::className(), ['metersdata_idmetersdata' => 'idmetersdata']);
-    }
+
 }

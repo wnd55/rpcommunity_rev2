@@ -3,9 +3,9 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Metersdata */
+/* @var $model backend\models\MetersData */
 
-$this->title = 'Update Metersdata: ' . $model->idmetersdata;
+$this->title = 'Update MetersData: ' . $model->idmetersdata;
 $this->params['breadcrumbs'][] = ['label' => 'Metersdatas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idmetersdata, 'url' => ['view', 'id' => $model->idmetersdata]];
 $this->params['breadcrumbs'][] = 'Update';

@@ -37,7 +37,7 @@ class ProfileCreateForm extends Model
             $this->name = $profile->name;
             $this->patronymic = $profile->patronymic;
             $this->check1 = $profile->check1;
-            $this->check1 = $profile->check2;
+            $this->check2 = $profile->check2;
 
             $this->profile = $profile;
         }

@@ -40,7 +40,7 @@ class MetersDataController extends Controller
                     // allow authenticated users
                     [
                         'allow' => true,
-                        'roles' => ['user', 'moder', 'admin'],
+                        'roles' => ['user', 'moderator', 'admin', 'profile'],
                     ],
                 ],
             ],
@@ -74,6 +74,12 @@ class MetersDataController extends Controller
      */
     public function actionCreate()
     {
+        $user = User::findOne(['id' => Yii::$app->user->id]);
+
+        if(!isset($user->profile)){
+            Yii::$app->session->setFlash('warning', 'Необходимо заполнить данные счётчиков воды');
+            return $this->redirect(['water-meter/index']);
+        }
 
         $this->metersData->fillData();
 

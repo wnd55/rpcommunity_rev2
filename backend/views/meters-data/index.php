@@ -7,7 +7,7 @@ use \yii\jui\DatePicker;
 use \yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $provider yii\data\ActiveDataProvider */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $searchModel \frontend\models\MetersDataSearchForm */
 /** @var $counters */
 
@@ -17,21 +17,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Показание воды', 'url
 $from_date = isset(Yii::$app->request->getQueryParam('MetersDataSearchForm')['from_date']) ? Yii::$app->request->getQueryParam('MetersDataSearchForm')['from_date'] : null;
 $to_date = isset(Yii::$app->request->getQueryParam('MetersDataSearchForm')['to_date']) ? Yii::$app->request->getQueryParam('MetersDataSearchForm')['to_date'] : null;
 
-
-$visible = null;
-if ($counters === true) {
-    $visible = false;
-} else {
-
-    $visible = true;
-}
-
 ?>
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Внести показания воды', ['create'], ['class' => 'btn btn-primary',]) ?>
         <?= Html::a('Сохранить все данные в Excel', ['export-excel'], ['class' => 'btn btn-default']) ?>
     </p>
 
@@ -56,7 +46,7 @@ if ($counters === true) {
         <div class="col-md-3">
             <div class="form-group">
                 <?= Html::submitButton('Найти', ['class' => 'btn btn-primary']) ?>
-                <?=  Html::a("Сбросить", Url::toRoute(['/meters-data/index']), ['class' => 'btn btn-default']) ?>
+                <?= Html::a("Сбросить", Url::toRoute(['/meters-data/index']), ['class' => 'btn btn-default']) ?>
             </div>
         </div>
     </div>
@@ -64,7 +54,7 @@ if ($counters === true) {
 <?php ActiveForm::end(); ?>
     <hr>
 <?= GridView::widget([
-    'dataProvider' => $provider,
+    'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'rowOptions' => function ($model, $key, $index, $grid) {
         return [
@@ -95,22 +85,21 @@ if ($counters === true) {
 
                 'attribute' => 'wmcold3',
                 'contentOptions' => ['style' => 'background-color:#0027ff14'],
-                'visible' => $visible
+
 
             ],
 
             [
                 'attribute' => 'cold3',
-                'visible' => $visible
+
             ],
 
-            'wmhot1',
             [
                 'attribute' => 'wmhot1',
                 'contentOptions' => ['style' => 'background-color:#FFA39229'],
             ],
             'hot1',
-            'wmhot2',
+
             [
                 'attribute' => 'wmhot2',
                 'contentOptions' => ['style' => 'background-color:#FFA39229'],
@@ -119,18 +108,17 @@ if ($counters === true) {
             [
                 'attribute' => 'wmhot3',
                 'contentOptions' => ['style' => 'background-color:#FFA39229'],
-                'visible' => $visible
+
 
             ],
             [
                 'attribute' => 'hot3',
-                'visible' => $visible
+
             ],
 
             'date:date',
 
 
-            ['class' => 'yii\grid\ActionColumn'],
         ],
 
 

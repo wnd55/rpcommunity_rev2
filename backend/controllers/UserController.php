@@ -93,23 +93,6 @@ class UserController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    /**
-     * Creates a new User model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new User();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
 
     /**
      * Updates an existing User model.
@@ -140,9 +123,38 @@ class UserController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $user = $this->findModel($id);
+        $auth = Yii::$app->authManager;
+        $roleUser = $auth->getRolesByUser($id);
 
-        return $this->redirect(['index']);
+        if (isset($roleUser['moderator']) || isset($roleUser['admin'])) {
+
+            Yii::$app->session->setFlash('warning', 'Администратора удалить нельзя');
+
+            return $this->redirect(['index']);
+        }
+
+        if (!isset($user->profile)) {
+
+            $authAssignment = AuthAssignment::findOne(['user_id' => $user->id]);
+
+            if (isset($authAssignment)) {
+                $authAssignment->delete();
+                $user->delete();
+            } else {
+
+                $user->delete();
+            }
+            Yii::$app->session->setFlash('success', 'Регистрация удалена');
+            return $this->redirect(['index']);
+
+        } else {
+
+            Yii::$app->session->setFlash('error', 'Регистрация содержит активный профиль, необходимо удалить профиль');
+            return $this->redirect(['index']);
+        }
+
+
     }
 
     /**
@@ -155,12 +167,22 @@ class UserController extends Controller
             throw new BadRequestHttpException(400, 'Only ajax request is allowed.');
         }
 
-        $users = User::find()->where(['in', 'id', Yii::$app->request->post('id')])->all();
+        $users = User::find()->where(['in', 'id', Yii::$app->request->post('id')])->joinWith('profile')->all();
 
 
         foreach ($users as $user) {
 
             if (!isset($user->profile)) {
+
+                $auth = Yii::$app->authManager;
+                $roleUser = $auth->getRolesByUser($user->id);
+
+                if (isset($roleUser['moderator']) || isset($roleUser['admin'])) {
+
+                    Yii::$app->session->setFlash('warning', 'Администратора удалить нельзя');
+
+                    return $this->redirect(['index']);
+                }
 
                 $authAssignment = AuthAssignment::findOne(['user_id' => $user->id]);
 
@@ -173,12 +195,14 @@ class UserController extends Controller
                 }
 
 
+            } else {
+
+                return 'Error';
             }
         }
 
         $data = 'User deleted';
         return $data;
-
 
     }
 

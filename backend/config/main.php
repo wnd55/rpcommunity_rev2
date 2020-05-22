@@ -75,6 +75,7 @@ return [
             'showScriptName' => false,
             'rules' => [
 
+                '/login' => '/site/login'
                 //'<module>/rbac/<action>' => '<module>/rbac/default/<action>',
 
             ],
@@ -85,7 +86,7 @@ return [
             'rules' => [
                 [
                     'allow' => true,
-                    'roles' => ['admin']
+                    'roles' => ['admin', 'moderator']
                 ],
             ],
 

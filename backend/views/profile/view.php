@@ -70,6 +70,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'created_at:date',
             'updated_at:date',
 
+
+            'check1',
+            'check2',
+
             [
 
                 'label' => 'Создано',

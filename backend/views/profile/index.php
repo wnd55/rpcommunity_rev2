@@ -24,6 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     'dataProvider' => $provider,
     'filterModel' => $profileSearch,
+    'rowOptions' => function ($model, $key, $index, $grid) {
+        return [
+            'onclick' => 'location.href="'
+                . Url::to(['/profile/view', 'id' => $key,]) . '"',
+            'onmouseenter' => "style='background-color:#dedede; cursor: pointer;'",
+            'onmouseleave' => "style='background-color:'",
+        ];
+    },
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
         'idprofile',

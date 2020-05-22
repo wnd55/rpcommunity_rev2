@@ -11,6 +11,13 @@ use yii\rbac\Item;
 
 class RoleColumn extends DataColumn
 {
+
+    /**
+     * @param mixed $model
+     * @param mixed $key
+     * @param int $index
+     * @return string
+     */
     protected function renderDataCellContent($model, $key, $index)
     {
         $roles = Yii::$app->authManager->getRolesByUser($model->id);
@@ -19,9 +26,27 @@ class RoleColumn extends DataColumn
         }, $roles));
     }
 
+    /**
+     * @param Item $role
+     * @return string
+     */
     private function getRoleLabel(Item $role)
     {
-        $class = $role->name == Rbac::ROLE_USER ? 'primary' : 'danger';
+        $class = $role->name;
+        if ($role->name === Rbac::ROLE_USER) {
+            $class = 'info';
+
+        } elseif ($role->name === Rbac::ROLE_PROFILE) {
+            $class = 'primary';
+        } elseif ($role->name === Rbac::ROLE_MODERATOR) {
+
+            $class = 'warning';
+        } else {
+
+            $class = 'danger';
+        }
+
+
         return Html::tag('span', Html::encode($role->name), ['class' => 'label label-' . $class]);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\User;
 use common\models\WaterMeter;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
@@ -31,7 +32,7 @@ class WaterMeterController extends Controller
                     // allow authenticated users
                     [
                         'allow' => true,
-                        'roles' => ['user', 'moder', 'admin'],
+                        'roles' => ['user', 'moder', 'admin', 'profile'],
                     ],
                 ],
             ],
@@ -75,6 +76,13 @@ class WaterMeterController extends Controller
      */
     public function actionCreate()
     {
+
+       $user = User::findOne(['id' => Yii::$app->user->id]);
+
+       if(!isset($user->profile)){
+           Yii::$app->session->setFlash('warning', 'Необходимо заполнитиь данные профиля');
+           return $this->redirect(['profile/create']);
+       }
         $model = new WaterMeter();
 
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {

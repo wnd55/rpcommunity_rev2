@@ -3,10 +3,12 @@
 namespace backend\models;
 
 use common\models\User;
+use SebastianBergmann\Type\RuntimeException;
 use yii\base\ErrorException;
 use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\VarDumper;
 
 /**
  * This is the model class for table "profile".
@@ -41,8 +43,6 @@ class Profile extends \yii\db\ActiveRecord
         return 'profile';
     }
 
-
-
     public function behaviors()
     {
         return [
@@ -62,11 +62,61 @@ class Profile extends \yii\db\ActiveRecord
             [['user_id', 'account', 'homeowners_id', 'address_id', 'apartment',], 'integer'],
             [['surname', 'patronymic'], 'string', 'max' => 255],
             [['name'], 'string', 'max' => 45],
+            [['check1', 'check2'], 'boolean'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id'],],
             [['address_id'], 'exist', 'skipOnError' => true, 'targetClass' => Address::class, 'targetAttribute' => ['address_id' => 'idaddress',]],
             [['homeowners_id'], 'exist', 'skipOnError' => true, 'targetClass' => Homeowners::class, 'targetAttribute' => ['homeowners_id' => 'idhomeowners',]],
         ];
     }
+
+
+    /**
+     * @param $model
+     * @return static
+     * @throws ErrorException
+     */
+    public static function createProfile(ProfileCreateForm $model)
+    {
+
+        $profile = new static();
+
+        $profile->user_id = $model->user_id;
+        $profile->account = $model->account;
+        $profile->apartment = $model->apartment;
+        $profile->homeowners_id = $model->homeowners_id;
+        $profile->address_id = $model->address_id;
+        $profile->surname = $model->surname;
+        $profile->name = $model->name;
+        $profile->patronymic = $model->patronymic;
+        $profile->check1 = $model->check1 ? $model->check1 : 0;
+        $profile->check2 = $model->check2 ? $model->check2 : 0;
+
+        if (!$profile->save()) {
+
+
+            throw new ErrorException('Ошибка сохранения');
+        }
+
+        $user = User::findOne(['id' => $profile->user_id]);
+        $user->status = User::STATUS_ACTIVE;
+        $user->update(false);
+
+        $auth = Yii::$app->authManager;
+        $roleUser = $auth->getRolesByUser($profile->user_id);
+
+        if ($roleUser['user']->name === 'user' || $roleUser == null) {
+
+            $authRoleUser = $auth->getRole('user');
+            $auth->revoke($authRoleUser, $profile->user_id);
+            $authRole = $auth->getRole('profile');
+            $auth->assign($authRole, $profile->user_id);
+        }
+
+
+        return $profile;
+
+    }
+
 
     /**
      * {@inheritdoc}
@@ -93,54 +143,12 @@ class Profile extends \yii\db\ActiveRecord
     }
 
     /**
-     * @param $model
-     * @return static
-     * @throws ErrorException
-     */
-    public static function createProfile(ProfileCreateForm $model)
-    {
-
-        $profile = new static();
-
-        $profile->user_id = $model->user_id;
-        $profile->account = $model->account;
-        $profile->apartment = $model->apartment;
-        $profile->homeowners_id = $model->homeowners_id;
-        $profile->address_id = $model->address_id;
-        $profile->surname = $model->surname;
-        $profile->name = $model->name;
-        $profile->patronymic = $model->patronymic;
-        $profile->check1 = isset($model->check1) ? isset($model->check1) : 0;
-        $profile->check1 = isset($model->check2) ? isset($model->check2) : 0;
-
-        if (!$profile->save()) {
-
-
-            throw new ErrorException('Ошибка сохранения');
-        }
-
-        $auth = Yii::$app->authManager;
-        $roleUser = $auth->getRolesByUser($profile->user_id);
-
-        if ($roleUser === 'user' || $roleUser == null) {
-
-            $authRoleUser = $auth->getRole('user');
-            $auth->revoke($authRoleUser, $profile->user_id);
-            $authRole = $auth->getRole('profile');
-            $auth->assign($authRole, $profile->user_id);
-        }
-
-
-        return $profile;
-
-    }
-
-    /**
      * @param Profile $profile
      * @throws ErrorException
      */
     public function remove(Profile $profile)
     {
+        $userId = $profile->user_id;
 
 
         if (!$profile->delete()) {
@@ -148,15 +156,20 @@ class Profile extends \yii\db\ActiveRecord
             throw new ErrorException('Ошибка удаления');
         }
 
-        $auth = Yii::$app->authManager;
-        $roleUser = $auth->getRolesByUser($profile->user_id);
+        $user = User::findOne(['id' => $userId]);
+        $user->status = User::STATUS_DELETED_PROFILE;
+        $user->update(false);
 
-        if ($roleUser === 'profile') {
+        $auth = Yii::$app->authManager;
+        $roleUser = $auth->getRolesByUser($userId);
+
+
+        if ($roleUser['profile']->name === 'profile') {
 
             $authRoleProfile = $auth->getRole('profile');
-            $auth->revoke($authRoleProfile, $profile->user_id);
+            $auth->revoke($authRoleProfile, $userId);
             $authRoleUser = $auth->getRole('user');
-            $auth->assign($authRoleUser, $profile->user_id);
+            $auth->assign($authRoleUser, $userId);
         }
 
     }
@@ -177,8 +190,8 @@ class Profile extends \yii\db\ActiveRecord
         $profile->surname = $model->surname;
         $profile->name = $model->name;
         $profile->patronymic = $model->patronymic;
-        $profile->check1 = isset($model->check1) ? isset($model->check1) : 0;
-        $profile->check1 = isset($model->check2) ? isset($model->check2) : 0;
+        $profile->check1 = $model->check1 ? $model->check1 : 0;
+        $profile->check2 = $model->check2 ? $model->check2 : 0;
 
         if (!$profile->save()) {
 

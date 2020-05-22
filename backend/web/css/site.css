@@ -128,17 +128,28 @@ a.desc:after {
 }
 
 
+h1{
+
+    font-size: 1.5em;
+
+}
+
+ul.breadcrumb{
+
+    margin-top: 20px;
+}
+
 /*menu*/
 
 nav.amp-navbar-fixed-top {
 
-    /*top: 0;*/
-    /*border-width: 0 0 1px;*/
+
     background-color: #150131;
     /*border-color: #080808;*/
     min-height: 50px;
     margin-bottom: 20px;
     position: fixed;
+    padding: 3px 0px;
     right: 0;
     left: 0;
     z-index: 1030;

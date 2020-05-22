@@ -9,7 +9,7 @@ use yii\base\ErrorException;
 use yii\helpers\ArrayHelper;
 
 /**
- * This is the model class for table "metersdata".
+ * This is the model class for table "meters-data".
  *
  * @property int $idmetersdata
  * @property int $user_id
@@ -234,15 +234,6 @@ class MetersData extends \yii\db\ActiveRecord
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
 
-    /**
-     * Gets query for [[Metersydataalls]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-//    public function getMetersydataalls()
-//    {
-//        return $this->hasMany(Metersydataall::className(), ['metersdata_idmetersdata' => 'idmetersdata']);
-//    }
 
 
 }

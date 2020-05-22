@@ -33,6 +33,12 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
+                        'actions' => ['logout', 'index', 'host-settings', 'logs', 'view-log', 'delete-log', 'delete-all-logs'],
+                        'allow' => true,
+                        'roles' => ['moderator'],
+                    ],
+
+                    [
                         'actions' => ['logout', 'index', 'host-settings',
                             'delete-setting', 'logs', 'view-log', 'delete-log', 'delete-all-logs'],
                         'allow' => true,

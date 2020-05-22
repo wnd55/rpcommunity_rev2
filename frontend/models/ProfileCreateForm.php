@@ -40,7 +40,7 @@ class ProfileCreateForm extends Model
             $this->name = $profile->name;
             $this->patronymic = $profile->patronymic;
             $this->check1 = $profile->check1;
-            $this->check1 = $profile->check2;
+            $this->check2 = $profile->check2;
 
             $this->profile = $profile;
         }
@@ -53,13 +53,12 @@ class ProfileCreateForm extends Model
     public function rules()
     {
         return [
-            [['user_id', 'account', 'homeowners_id', 'address_id', 'apartment', 'surname', 'name', 'patronymic',], 'required'],
-            [['user_id', 'homeowners_id', 'address_id', 'apartment',], 'integer'],
+            [['account', 'homeowners_id', 'address_id', 'apartment', 'surname', 'name', 'patronymic',], 'required'],
+            [['homeowners_id', 'address_id', 'apartment',], 'integer'],
             [['surname', 'patronymic', 'account',], 'string', 'max' => 255],
             [['name'], 'string', 'max' => 45],
             [['account', 'apartment'], 'string',],
             [['check1', 'check2'], 'boolean'],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['user_id' => 'id'],],
             [['address_id'], 'exist', 'skipOnError' => true, 'targetClass' => Address::class, 'targetAttribute' => ['address_id' => 'idaddress']],
             [['homeowners_id'], 'exist', 'skipOnError' => true, 'targetClass' => Homeowners::class, 'targetAttribute' => ['homeowners_id' => 'idhomeowners']],
         ];

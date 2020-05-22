@@ -16,7 +16,7 @@ use yii\grid\ActionColumn;
 $this->title = 'Регистрации';
 $this->params['breadcrumbs'][] = $this->title;
 $this->registerJsFile(
-    '@web/js/common.js',
+    '@web/js/users.js',
     ['depends' => [\yii\web\JqueryAsset::class]]
 );
 ?>
@@ -73,7 +73,7 @@ $this->registerJsFile(
                 ],
                 [
                     'attribute' => 'profile',
-                    'label' => 'Профиль',
+                    'label' => 'Аккунт',
                     'value' => function ($model) {
                         if (isset($model->profile)) {
                             return $model->profile->account;
@@ -91,6 +91,11 @@ $this->registerJsFile(
                 [
                     'class' => ActionColumn::class,
                     'template' => '{view}{update}',
+                    'visibleButtons' =>[
+
+                        'update' => \Yii::$app->user->can('dashboardAdmin'),
+                    ]
+
 
 
                 ],

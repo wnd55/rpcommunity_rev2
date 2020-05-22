@@ -39,7 +39,10 @@
                 return $('#btnDelete').after(errorInfo);
             }
         });
-    })
+    });
+
+
+
 
 })(window.jQuery);
 

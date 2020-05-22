@@ -71,7 +71,7 @@ AppAsset::register($this);
                     </li>
 
                     <li>
-                        <a href= <?= Url::toRoute('//metersdata') ?>>
+                        <a href= <?= Url::toRoute('/meters-data') ?>>
                             <i class="fa fa-crop" aria-hidden="true"></i>
                             <span class="title">Показания воды</span>
                         </a>
@@ -104,13 +104,14 @@ AppAsset::register($this);
 
                         </a>
                         <ul>
+
+                            <li>
+                                <?= Html::a('Регистрации', Url::toRoute('/user')) ?>
+                            </li>
                             <li>
                                 <?= Html::a('Роли', Url::toRoute('/rbac/default/role')) ?>
 
 
-                            </li>
-                            <li>
-                                <?= Html::a('Регистрации', Url::toRoute('/user')) ?>
                             </li>
 
                             <li>

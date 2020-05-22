@@ -43,5 +43,3 @@ use yii\bootstrap\ActiveForm;
     <?php ActiveForm::end() ?>
 
 </div>
-
-<?= print_r($model->errors) ?>

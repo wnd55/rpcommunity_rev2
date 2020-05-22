@@ -7,6 +7,7 @@ use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
 use yii\base\InvalidArgumentException;
+use yii\helpers\VarDumper;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -133,6 +134,7 @@ class SiteController extends Controller
     public function actionContact()
     {
         $model = new ContactForm();
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
                 Yii::$app->session->setFlash('success', 'Благодарим Вас за обращение к нам. Мы ответим вам как можно скорее.');
@@ -156,15 +158,32 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        $model = new SignupForm();
-        if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Спасибо за регистрацию.');
-            return $this->goHome();
+
+        $form = new SignupForm();
+
+        if ($form->load(Yii::$app->request->post()) && $form->validate()) {
+
+            try {
+                $form->signup($form);
+
+                Yii::$app->session->setFlash('success', 'Вы зарегестрировались успешно!');
+
+                return $this->goHome();
+
+
+            } catch (\DomainException $e) {
+
+                Yii::$app->errorHandler->logException($e);
+                Yii::$app->session->setFlash('error', $e->getMessage());
+
+            }
+
         }
 
         return $this->render('signup', [
-            'model' => $model,
+            'model' => $form,
         ]);
+
     }
 
     /**

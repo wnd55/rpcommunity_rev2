@@ -102,7 +102,7 @@ class ProfileController extends Controller
 
             try {
                 $this->profile->edit($model, $profile);
-                Yii::$app->session->setFlash('success', 'Профиль успешно создан');
+                Yii::$app->session->setFlash('success', 'Профиль успешно изменён');
                 return $this->redirect(['index']);
 
             } catch (ErrorException $exception) {
@@ -155,9 +155,9 @@ class ProfileController extends Controller
         $profile = $this->findModel($id);
         try {
 
+            //Профиль удаляется, в регистрации меняется роль c profile на user
             $this->profile->remove($profile);
 
-            //TODO вернуть роль user
 
         } catch (ErrorException $exception) {
 

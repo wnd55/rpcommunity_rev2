@@ -14,14 +14,11 @@ use \backend\helpers\UserHelper;
         <div class="box">
             <?php $form = ActiveForm::begin(); ?>
             <div class="box-section">
-                <div class="col-md-4">
-                    <?= $form->field($model, 'user_id')->dropDownList($model->getUserList(), ['prompt' => 'Выбрать']) ?>
-                </div>
 
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <?= $form->field($model, 'account')->textInput() ?>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <?= $form->field($model, 'apartment')->textInput(); ?>
                 </div>
             </div>

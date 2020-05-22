@@ -6,7 +6,6 @@ use yii\helpers\Html;
 /* @var $model common\models\Profile */
 
 $this->title = 'Создать профиль';
-$this->params['breadcrumbs'][] = ['label' => 'Профили', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-create">

@@ -7,6 +7,12 @@ use \backend\helpers\UserHelper;
 /* @var $this yii\web\View */
 /* @var $model backend\models\ProfileCreateForm */
 /* @var $form yii\widgets\ActiveForm */
+
+$this->registerJsFile(
+    '@web/js/profile.js',
+    ['depends' => [\yii\web\JqueryAsset::class]]
+);
+
 ?>
 
 <div class="profile-form">
@@ -45,16 +51,21 @@ use \backend\helpers\UserHelper;
                     <?= $form->field($model, 'patronymic')->textInput(); ?>
                 </div>
             </div>
+
+
             <div class="col-md-12">
                 <?php if (Yii::$app->user->can('dashboardAdmin')): ?>
+
                     <?= $form->field($model, 'check1')->checkbox(); ?>
+
                     <?= $form->field($model, 'check2')->checkbox(); ?>
                 <?php endif; ?>
             </div>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
-                </div>
+
+            <div class="form-group">
+                <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+            </div>
 
             <?php ActiveForm::end(); ?>
         </div>

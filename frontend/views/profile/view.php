@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="profile-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <p class="lead"><?=Html::encode($model->surname . ' ' . $model->name . ' ' . $model->patronymic)?></p>
 
     <p>
         <?= Html::a('Изменить', ['update', 'id' => $model->idprofile], ['class' => 'btn btn-primary']) ?>

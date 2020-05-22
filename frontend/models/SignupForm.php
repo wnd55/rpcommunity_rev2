@@ -13,6 +13,8 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $verifyCode;
+
 
 
     /**
@@ -23,7 +25,8 @@ class SignupForm extends Model
         return [
             'username' => 'Логин',
             'password' => 'Пароль',
-            'email' => 'Email'
+            'email' => 'Email',
+            'verifyCode' => 'Код проверки',
         ];
 
     }
@@ -37,35 +40,35 @@ class SignupForm extends Model
         return [
             ['username', 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Это имя пользователя уже занято.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Этот адрес электронной почты уже занят.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+
+            ['verifyCode', 'captcha'],
+
         ];
     }
 
     /**
-     * Signs user up.
-     *
-     * @return bool whether the creating new account was successful and email was sent
+     * @param SignupForm $form
      */
-    public function signup()
+
+    public function signup(SignupForm $form)
     {
-        if (!$this->validate()) {
-            return null;
-        }
         
         $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
+        $user->username = $form->username;
+        $user->email = $form->email;
+        $user->status = User::STATUS_ACTIVE;
+        $user->setPassword($form->password);
         $user->generateAuthKey();
         $user->save();
 
@@ -74,6 +77,7 @@ class SignupForm extends Model
         $auth->assign($authRole, $user->getId());
 
         $this->sendEmail($user);
+
 
     }
 

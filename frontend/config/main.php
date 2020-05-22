@@ -10,17 +10,11 @@ $params = array_merge(
 );
 
 
-
 return [
     'id' => 'rp-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => [
         'log',
-//
-//        'frontend\chat\ChatServer',
-//        'frontend\chat\Chat'
-
-
     ],
     'controllerNamespace' => 'frontend\controllers',
     'on beforeRequest' => function ($event) {
@@ -43,6 +37,7 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend

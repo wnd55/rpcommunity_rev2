@@ -10,6 +10,7 @@ $this->title = 'Изменение профиля: ' . $profile->idprofile;
 $this->params['breadcrumbs'][] = ['label' => 'Профили', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $profile->idprofile, 'url' => ['view', 'id' => $profile->idprofile]];
 $this->params['breadcrumbs'][] = 'Изменение профиля';
+
 ?>
 <div class="profile-update">
 

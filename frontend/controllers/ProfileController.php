@@ -26,7 +26,7 @@ class ProfileController extends Controller
                     // allow authenticated users
                     [
                         'allow' => true,
-                        'roles' => ['user', 'moder', 'admin'],
+                        'roles' => ['user', 'moder', 'admin', 'profile'],
                     ],
                 ],
             ],
@@ -42,12 +42,36 @@ class ProfileController extends Controller
         ];
     }
 
+
+    /**
+     * @return string|\yii\web\Response
+     */
+    public function actionView()
+    {
+        $id = Yii::$app->user->id;
+
+        if (($model = Profile::findOne(['user_id' => $id])) !== null) {
+
+            $this->layout = 'cabinet';
+            return $this->render('view', [
+                'model' => $model,
+            ]);
+        } else {
+
+            return $this->redirect('create');
+        }
+
+    }
+
     /**
      * @return string|\yii\web\Response
      */
 
     public function actionCreate()
     {
+
+
+        //TODO  убрать email
 
         $model = new ProfileCreateForm(null);
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -68,34 +92,78 @@ class ProfileController extends Controller
         return $this->render('create', ['model' => $model]);
 
 
-
-    }
-
-    /**
-     * @return string
-     */
-    public function actionView()
-    {
-        $id = Yii::$app->user->id;
-
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
     }
 
 
     /**
      * @param $id
-     * @return null|\yii\web\Response|static
+     * @return string|\yii\web\Response
      */
-    protected function findModel($id)
+    public function actionUpdate($id)
     {
-        if (($model = Profile::findOne(['user_id' => $id])) !== null) {
+        $profile = $this->findModel($id);
+        $model = new ProfileCreateForm($profile);
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+
+            try {
+                $profile->edit($model, $profile);
+                Yii::$app->session->setFlash('success', 'Профиль успешно изменён');
+                return $this->redirect(['view']);
+
+            } catch (ErrorException $exception) {
+
+                Yii::$app->errorHandler->logException($exception);
+                Yii::$app->session->setFlash('error', 'Ошибка');
+
+            }
+        }
+
+        return $this->render('update', ['model' => $model, 'profile' => $profile]);
+
+    }
+
+    /**
+     * @param $id
+     * @return Profile $model
+     * @throws NotFoundHttpException
+     */
+    private function findModel($id)
+    {
+        if (($model = Profile::findOne($id)) !== null) {
+
             return $model;
         } else {
+            throw new NotFoundHttpException('Запрашиваемая страница не существует.');
 
-            return $this->redirect('create', ['userId' => $id]);
         }
+
+
+    }
+
+    /**
+     * @param $id
+     * @return \yii\web\Response
+     */
+    public function actionDelete($id)
+    {
+        $profile = $this->findModel($id);
+        try {
+
+            //Профиль удаляется, в регистрации меняется роль c profile на user
+
+            $profile->remove($profile);
+
+
+        } catch (ErrorException $exception) {
+
+            Yii::$app->errorHandler->logException($exception);
+            Yii::$app->session->getFlash('error', 'Ошибка удаления');
+
+        }
+
+        Yii::$app->session->setFlash('success', 'Профиль успешно удалён');
+        return $this->goHome();
     }
 
 

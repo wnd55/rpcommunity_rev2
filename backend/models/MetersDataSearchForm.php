@@ -4,13 +4,17 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Metersdata;
+use backend\models\MetersData;
 
 /**
- * MetersdataSearchForm represents the model behind the search form of `backend\models\Metersdata`.
+ * MetersDataSearchForm represents the model behind the search form of `backend\models\MetersData`.
  */
-class MetersdataSearchForm extends Metersdata
+class MetersDataSearchForm extends MetersData
 {
+    public $from_date;
+    public $to_date;
+
+
     /**
      * {@inheritdoc}
      */
@@ -18,18 +22,10 @@ class MetersdataSearchForm extends Metersdata
     {
         return [
             [['idmetersdata', 'user_id', 'watermeter_id', 'cold1', 'wmcold2', 'cold2', 'wmcold3', 'cold3', 'wmhot1', 'hot1', 'wmhot2', 'hot2', 'wmhot3', 'hot3', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['date'], 'safe'],
+            [['from_date', 'to_date'], 'date', 'format' => 'Y/m/d',],
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function scenarios()
-    {
-        // bypass scenarios() implementation in the parent class
-        return Model::scenarios();
-    }
 
     /**
      * Creates data provider instance with search query applied
@@ -40,12 +36,17 @@ class MetersdataSearchForm extends Metersdata
      */
     public function search($params)
     {
-        $query = Metersdata::find();
+        $query = MetersData::find();
 
-        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => [
+                'defaultOrder' => [
+
+                    'date' => SORT_DESC,
+                ],
+            ]
         ]);
 
         $this->load($params);
@@ -73,12 +74,12 @@ class MetersdataSearchForm extends Metersdata
             'hot2' => $this->hot2,
             'wmhot3' => $this->wmhot3,
             'hot3' => $this->hot3,
-            'date' => $this->date,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'created_by' => $this->created_by,
-            'updated_by' => $this->updated_by,
+
         ]);
+
+        $query->andFilterWhere(['>=', 'created_at', $this->from_date ? strtotime($this->from_date.'00:00:00') : null])
+            ->andFilterWhere(['<=', 'created_at', $this->to_date ? strtotime($this->to_date .'23:59:59') : null]);
+
 
         return $dataProvider;
     }
