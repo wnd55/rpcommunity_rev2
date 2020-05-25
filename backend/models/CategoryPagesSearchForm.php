@@ -42,7 +42,6 @@ class CategoryPagesSearchForm extends CategoriesPages
     {
         $query = CategoriesPages::find();
 
-        // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,7 +55,7 @@ class CategoryPagesSearchForm extends CategoriesPages
             return $dataProvider;
         }
 
-        // grid filtering conditions
+
         $query->andFilterWhere([
             'id' => $this->id,
             'parent' => $this->parent,

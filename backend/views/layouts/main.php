@@ -71,8 +71,8 @@ AppAsset::register($this);
                     </li>
 
                     <li>
-                        <a href= <?= Url::toRoute('/meters-data') ?>>
-                            <i class="fa fa-crop" aria-hidden="true"></i>
+                        <a href= <?= Url::toRoute('/meters-data/index') ?>>
+                            <i class="fa fa-bath" aria-hidden="true"></i>
                             <span class="title">Показания воды</span>
                         </a>
 
@@ -80,7 +80,7 @@ AppAsset::register($this);
 
                     <li>
                         <a href="#">
-                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
                             <span class="title">Страницы</span>
                         </a>
                         <ul>
@@ -125,7 +125,7 @@ AppAsset::register($this);
 
                     <li class="last ">
                         <a href="#">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-key"></i>
                             <span class="title">
                         <?= Html::beginForm(['/site/logout'], 'post'); ?>
                         <?= Html::submitButton('Выход (' . Yii::$app->user->identity->username . ')', ['class' => 'btn btn-link logout']); ?>
@@ -150,9 +150,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+        <p class="pull-right">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+
     </div>
 </footer>
 

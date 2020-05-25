@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use \yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\CategoriesPages */
@@ -33,13 +34,21 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'slug',
             'content:ntext',
+            [
+                'attribute' => 'content',
+                'value' => function ($model) {
+
+                    return StringHelper::truncate($model->content, 20);
+                }
+
+            ],
             'parent',
-            'status',
+            'status:boolean',
             'meta_title',
             'meta_description',
             'meta_keywords',
-            'created_at',
-            'updated_at',
+            'created_at:date',
+            'updated_at:date',
             'created_by',
             'updated_by',
         ],

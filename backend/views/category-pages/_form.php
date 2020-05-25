@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'parent')->textInput() ?>
+    <?= $form->field($model, 'parent')->dropDownList($model->getCategoryPagesParent(isset($model->id) ? $model->id : null), ['prompt' => 'Добавить родительскую категорию']) ?>
 
     <?= $form->field($model, 'status')->checkbox() ?>
 
@@ -27,7 +27,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'meta_keywords')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

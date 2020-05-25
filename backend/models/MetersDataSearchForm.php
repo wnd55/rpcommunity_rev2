@@ -13,6 +13,7 @@ class MetersDataSearchForm extends MetersData
 {
     public $from_date;
     public $to_date;
+    public $account;
 
 
     /**
@@ -21,8 +22,9 @@ class MetersDataSearchForm extends MetersData
     public function rules()
     {
         return [
-            [['idmetersdata', 'user_id', 'watermeter_id', 'cold1', 'wmcold2', 'cold2', 'wmcold3', 'cold3', 'wmhot1', 'hot1', 'wmhot2', 'hot2', 'wmhot3', 'hot3', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
+            [['idmetersdata', 'user_id', 'watermeter_id', 'cold1', 'wmcold2', 'cold2', 'wmcold3', 'cold3', 'wmhot1', 'hot1', 'wmhot2', 'hot2', 'wmhot3', 'hot3',], 'integer'],
             [['from_date', 'to_date'], 'date', 'format' => 'Y/m/d',],
+            ['account', 'integer']
         ];
     }
 
@@ -36,7 +38,7 @@ class MetersDataSearchForm extends MetersData
      */
     public function search($params)
     {
-        $query = MetersData::find();
+        $query = MetersData::find()->joinWith('user.profile');
 
 
         $dataProvider = new ActiveDataProvider([
@@ -77,9 +79,15 @@ class MetersDataSearchForm extends MetersData
 
         ]);
 
-        $query->andFilterWhere(['>=', 'created_at', $this->from_date ? strtotime($this->from_date.'00:00:00') : null])
-            ->andFilterWhere(['<=', 'created_at', $this->to_date ? strtotime($this->to_date .'23:59:59') : null]);
 
+        $query->andFilterWhere(['>=', 'metersdata.created_at', $this->from_date ? strtotime($this->from_date . '00:00:00') : null])
+            ->andFilterWhere(['<=', 'metersdata.created_at', $this->to_date ? strtotime($this->to_date . '23:59:59') : null]);
+
+
+        if (!empty($this->account)) {
+
+            $query->andFilterWhere(['profile.account' => $this->account]);
+        }
 
         return $dataProvider;
     }

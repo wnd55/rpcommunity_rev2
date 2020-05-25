@@ -60,10 +60,10 @@ class HostSettings extends \yii\db\ActiveRecord
             'name' => 'Название',
             'value' => 'Значение',
             'status' => 'Статус',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
+            'created_at' => 'Дата создания',
+            'updated_at' => 'Дата изменения',
+            'created_by' => 'Создал',
+            'updated_by' => 'Изменил',
         ];
     }
 }

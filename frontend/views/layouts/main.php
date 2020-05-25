@@ -166,7 +166,7 @@ AppAsset::register($this);
                                 <?= Html::a('Счётчики воды', Url::toRoute('/water-meter')) ?>
                             </li>
                             <li>
-                                <?= Html::a('Показания воды', Url::toRoute('/meters-data')) ?>
+                                <?= Html::a('Показания воды', Url::toRoute('/meters-data/index')) ?>
                             </li>
 
                         </ul>
@@ -175,7 +175,7 @@ AppAsset::register($this);
 
                     <li>
                         <a href= <?= Url::toRoute('/site/documents') ?>>
-                            <i class="fa fa-key" aria-hidden="true"></i>
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
                             <span class="title">Документы</span>
                         </a>
 

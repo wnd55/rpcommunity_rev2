@@ -6,6 +6,7 @@ use Yii;
 use yii\behaviors\BlameableBehavior;
 use yii\behaviors\TimestampBehavior;
 use yii\behaviors\SluggableBehavior;
+use yii\helpers\ArrayHelper;
 
 
 /**
@@ -91,6 +92,12 @@ class CategoriesPages extends \yii\db\ActiveRecord
         ];
     }
 
+
+    public function getCategoryPagesParent($id){
+
+
+        return ArrayHelper::map(CategoriesPages::find()->where(['not', ['id' => $id]])->asArray()->all(), 'id', 'title');
+    }
 
     /**
      * Gets query for [[Pages]].

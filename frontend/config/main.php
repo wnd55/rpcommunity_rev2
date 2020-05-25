@@ -61,6 +61,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'contact' => 'site/contact',
+                'signup' => 'site/signup',
+                'login' => 'site/login',
+                'documents' => 'site/documents',
+                'pages/<slug:[\w\-]+>' => 'pages/view',
             ],
         ],
 

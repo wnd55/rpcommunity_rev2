@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use \yii\grid\ActionColumn;
-
+use \yii\helpers\StringHelper;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 /* @var $logsSearch backend\models\LogsSearchForm */
@@ -45,7 +45,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'category',
             'log_time:date',
             'prefix',
-            'message',
+
+            [
+                'attribute' => 'message',
+                'value' => function ($model) {
+
+                    return StringHelper::truncate($model->message, 100);
+                }
+
+            ],
             [
                 'class' => ActionColumn::class,
                 'template' => '{view}{delete}',

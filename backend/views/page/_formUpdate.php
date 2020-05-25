@@ -15,7 +15,7 @@ mihaildev\elfinder\Assets::noConflict($this);
     <?php $form = ActiveForm::begin(); ?>
 
     <div class="box box-default">
-        <div class="box-header with-border">Common</div>
+        <div class="box-header with-border">Основное</div>
         <div class="box-body">
             <?= $form->field($model, 'parentId')->dropDownList($model->parentPagesList()) ?>
 
@@ -41,7 +41,7 @@ mihaildev\elfinder\Assets::noConflict($this);
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

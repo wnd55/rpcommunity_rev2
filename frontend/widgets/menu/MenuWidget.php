@@ -25,7 +25,7 @@ class MenuWidget extends Widget
         parent::run();
 
 
-        $pages = Pages::find()->where(['categories_pages_id' => 1])->orderBy('lft')->asArray()->all();
+        $pages = Pages::find()->where(['categories_pages_id' => 1])->andWhere(['status' => 1])->orderBy('lft')->asArray()->all();
 
         return $this->newTree($pages);
     }
@@ -82,7 +82,7 @@ class MenuWidget extends Widget
         echo '<ul>';
         foreach ($array as $item) {
             echo '<li>';
-            echo Html::a($item['title']);
+            echo Html::a($item['title'],['/pages/view', 'slug' => $item['slug']]);
             if (!empty($item['children'])) {
                 $this->buildMenu($item['children']);
             }

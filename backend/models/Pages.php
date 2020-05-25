@@ -127,6 +127,7 @@ class Pages extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Заголовок',
             'slug' => 'Slug',
+            'categories_pages_id' => 'Категория',
             'content' => 'Содержание',
             'status' => 'Статус',
             'meta_title' => 'Meta Title',

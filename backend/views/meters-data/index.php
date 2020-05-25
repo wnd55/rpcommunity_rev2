@@ -38,15 +38,17 @@ $to_date = isset(Yii::$app->request->getQueryParam('MetersDataSearchForm')['to_d
             <?= $form->field($searchModel, 'to_date')->widget(DatePicker::class, ['language' => 'ru', 'dateFormat' => 'php:Y/m/d'])->label('Дата по') ?>
         </div>
 
-        <?php if (isset($from_date) && isset($to_date)) : ?>
+        <div class="search-meters">
+            <?php if (isset($from_date) && isset($to_date)) : ?>
+                <div class="col-md-3">
+                    <?= Html::a('Сохранить в Excel результат', ['search-export-excel', 'from_date' => $from_date, 'to_date' => $to_date], ['class' => 'btn btn-default']) ?>
+                </div>
+            <?php endif; ?>
             <div class="col-md-3">
-                <?= Html::a('Сохранить в Excel результат поиска', ['search-export-excel', 'from_date' => $from_date, 'to_date' => $to_date], ['class' => 'btn btn-default']) ?>
-            </div>
-        <?php endif; ?>
-        <div class="col-md-3">
-            <div class="form-group">
-                <?= Html::submitButton('Найти', ['class' => 'btn btn-primary']) ?>
-                <?= Html::a("Сбросить", Url::toRoute(['/meters-data/index']), ['class' => 'btn btn-default']) ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Найти', ['class' => 'btn btn-primary']) ?>
+                    <?= Html::a("Сбросить", Url::toRoute(['/meters-data/index']), ['class' => 'btn btn-default']) ?>
+                </div>
             </div>
         </div>
     </div>
@@ -69,6 +71,15 @@ $to_date = isset(Yii::$app->request->getQueryParam('MetersDataSearchForm')['to_d
         [
 
             ['class' => 'yii\grid\SerialColumn'],
+
+            [
+                    'attribute' => 'account',
+                    'label' => 'Лицевой счет',
+                    'value' => function ($model) {
+
+                return $model->user->profile->account;
+
+            }],
 
             [
                 'attribute' => 'watermeter_id',
