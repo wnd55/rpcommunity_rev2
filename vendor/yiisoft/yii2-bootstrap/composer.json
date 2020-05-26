@@ -5,48 +5,25 @@
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "issues": "https://github.com/yiisoft/yii2-bootstrap/issues",
+        "issues": "https://github.com/yiisoft/yii2/issues?labels=ext%3Abootstrap",
         "forum": "http://www.yiiframework.com/forum/",
         "wiki": "http://www.yiiframework.com/wiki/",
         "irc": "irc://irc.freenode.net/yii",
-        "source": "https://github.com/yiisoft/yii2-bootstrap"
+        "source": "https://github.com/yiisoft/yii2"
     },
     "authors": [
         {
             "name": "Qiang Xue",
-            "email": "qiang.xue@gmail.com",
-            "homepage": "http://www.yiiframework.com/"
-        },
-        {
-            "name": "Alexander Makarov",
-            "email": "sam@rmcreative.ru",
-            "homepage": "http://rmcreative.ru/"
-        },
-        {
-            "name": "Antonio Ramirez",
-            "email": "amigo.cobos@gmail.com"
-        },
-        {
-            "name": "Paul Klimov",
-            "email": "klimov.paul@gmail.com"
+            "email": "qiang.xue@gmail.com"
         }
     ],
     "require": {
-        "yiisoft/yii2": "~2.0.6",
-        "bower-asset/bootstrap": "3.4.* | 3.3.* | 3.2.* | 3.1.*"
+        "yiisoft/yii2": "*",
+        "bower-asset/bootstrap": "3.2.* | 3.1.*"
     },
-    "require-dev": {
-        "phpunit/phpunit": "<7"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
     "autoload": {
         "psr-4": {
-            "yii\\bootstrap\\": "src"
+            "yii\\bootstrap\\": ""
         }
     },
     "extra": {

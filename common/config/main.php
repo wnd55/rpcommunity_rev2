@@ -6,7 +6,7 @@ return [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
-    'language' => 'ru-RU',
+    'language' => 'ru_RU',
     'name' => 'ТСЖ Рублевское Предместье 4/1',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
@@ -36,6 +36,20 @@ return [
                     'logTable' => '{{%system_log}}'
                 ]
             ]
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            'useFileTransport' => false,
+//            'transport' => [
+//                'class' => 'Swift_SendmailTransport',
+//                'host' => 'smtp.fullspace.ru',
+//                'username' => 'admin@rpcommunity.ru',
+//                'password' => '',
+//                'port' => '465',
+//                'encryption' => 'ssl',
+//            ],
+
         ],
 
     ],

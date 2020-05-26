@@ -2,48 +2,33 @@
 layout: default
 title: Customize and download
 slug: customize
-lead: Customize Bootstrap's components, Less variables, and jQuery plugins to get your very own version. Requires IE9+ or latest Safari, Chrome, or Firefox.
-redirect_from: "/docs/3.3/customize/"
+lead: Customize Bootstrap's components, Less variables, and jQuery plugins to get your very own version.
 ---
-
 
 <!-- less.js isn't IE8-compatible and throws an exception during initialization, so our Blob compatibility check and error messaging code never get called in that case.
   So we use a conditional comment instead to inform folks about the lack of IE8 support.
+  The alert covers up the entire customizer UI.
 -->
 <!--[if lt IE 9]>
   <style>
     .bs-customizer,
-    .bs-customizer-import,
     .bs-docs-sidebar {
       display: none;
     }
   </style>
-  <div class="alert alert-danger">
+  <div class="alert alert-danger bs-customizer-alert-ie">
     <strong>The Bootstrap Customizer does not support IE9 and below.</strong><br>
-    Please take a second to <a href="https://browsehappy.com/">upgrade to a more modern browser</a>.
+    Please take a second to <a href="http://browsehappy.com/">upgrade to a more modern browser</a>.
   </div>
 <![endif]-->
 
 <!-- Customizer form -->
-
-<div class="bs-docs-section bs-customizer-import">
-  <div id="import-drop-target" class="bs-dropzone">
-    <div class="import-header">
-      <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-    </div>
-    <p class="lead">Have an existing configuration? Upload your <code>config.json</code> to import it.</p>
-    <p><label id="import-manual-trigger" class="btn btn-outline btn-lg">Upload<input type="file" id="import-file-select" class="hidden"></label></p>
-    <hr>
-    <p><strong>Don't have one?</strong> That's okay—just start customizing the fields below.</p>
-  </div>
-</div>
-
-<form class="bs-customizer">
+<form class="bs-customizer" role="form">
   <div class="bs-docs-section" id="less-section">
     <button class="btn btn-default toggle" type="button">Toggle all</button>
     <h1 id="less" class="page-header">Less files</h1>
 
-    <p class="lead">Choose which Less files to compile into your custom build of Bootstrap. Not sure which files to use? Read through the <a href="{{ site.baseurl }}/css/">CSS</a> and <a href="{{ site.baseurl }}/components/">Components</a> pages in the docs.</p>
+    <p class="lead">Choose which Less files to compile into your custom build of Bootstrap. Not sure which files to use? Read through the <a href="../css/">CSS</a> and <a href="../components/">Components</a> pages in the docs.</p>
 
     <div class="row">
       <div class="col-xs-6 col-sm-4">
@@ -227,32 +212,31 @@ redirect_from: "/docs/3.3/customize/"
         <div class="checkbox">
           <label>
             <input type="checkbox" checked value="component-animations.less">
-            Component animations (for JS)<br>
-            (includes Collapse)
+            Component animations (for JS)
           </label>
         </div>
         <div class="checkbox">
           <label>
             <input type="checkbox" checked value="dropdowns.less">
-            Dropdown
+            Dropdowns
           </label>
         </div>
         <div class="checkbox">
           <label>
             <input type="checkbox" checked value="tooltip.less">
-            Tooltip
+            Tooltips
           </label>
         </div>
         <div class="checkbox">
           <label>
             <input type="checkbox" checked value="popovers.less">
-            Popover
+            Popovers
           </label>
         </div>
         <div class="checkbox">
           <label>
             <input type="checkbox" checked value="modals.less">
-            Modal
+            Modals
           </label>
         </div>
         <div class="checkbox">
@@ -265,11 +249,13 @@ redirect_from: "/docs/3.3/customize/"
     </div><!-- /.row -->
   </div>
 
+
+
   <div class="bs-docs-section" id="plugin-section">
     <button class="btn btn-default toggle" type="button">Toggle all</button>
     <h1 id="plugins" class="page-header">jQuery plugins</h1>
 
-    <p class="lead">Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to include? Read the <a href="{{ site.baseurl }}/javascript/">JavaScript</a> page in the docs.</p>
+    <p class="lead">Choose which jQuery plugins should be included in your custom JavaScript files. Unsure what to include? Read the <a href="../javascript/">JavaScript</a> page in the docs.</p>
     <div class="row">
       <div class="col-lg-6">
         <h4>Linked to components</h4>
@@ -358,9 +344,11 @@ redirect_from: "/docs/3.3/customize/"
 
     <div class="bs-callout bs-callout-danger">
       <h4>jQuery required</h4>
-      <p>All plugins require the latest version of <a href="https://jquery.com/" rel="noopener" target="_blank">jQuery</a> to be included.</p>
+      <p>All plugins require the latest version of <a href="http://jquery.com/" target="_blank">jQuery</a> to be included.</p>
     </div>
   </div>
+
+
 
   <div class="bs-docs-section" id="less-variables-section">
     <button class="btn btn-default toggle" type="button">Reset to defaults</button>
@@ -370,12 +358,14 @@ redirect_from: "/docs/3.3/customize/"
     {% include customizer-variables.html %}
   </div>
 
+
+
   <div class="bs-docs-section">
     <h1 id="download" class="page-header">Download</h1>
 
     <p class="lead">Hooray! Your custom version of Bootstrap is now ready to be compiled. Just click the button below to finish the process.</p>
     <div class="bs-customize-download">
-      <button type="submit" id="btn-compile" class="btn btn-block btn-lg btn-outline" onclick="ga('send', 'event', 'Customize', 'Download', 'Customize and Download');">Compile and Download</button>
+      <button type="submit" id="btn-compile" disabled class="btn btn-block btn-lg btn-outline" onclick="ga('send', 'event', 'Customize', 'Download', 'Customize and Download');">Compile and Download</button>
     </div>
   </div><!-- /download -->
 </form>

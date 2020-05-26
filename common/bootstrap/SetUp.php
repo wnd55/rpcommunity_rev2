@@ -22,9 +22,11 @@ class SetUp implements BootstrapInterface
 
         $container = \Yii::$container;
 
-        $container->setSingleton(MailerInterface::class, function () use ($app) {
+        $container->setSingleton(MailerInterface::class, function() use($app){
 
             return $app->mailer;
+
+
         });
 
         $container->setSingleton(ManagerInterface::class, function () use ($app) {

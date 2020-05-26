@@ -1,15 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
     {% include header.html %}
   </head>
   <body>
-    {% include skippy.html %}
-    {% include v4.html %}
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
+    <!-- Docs master nav -->
     {% include nav/main.html %}
 
-    <div class="bs-docs-header" id="content" tabindex="-1">
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content">
       <div class="container">
         <h1>{{ page.title }}</h1>
         <p>{{ page.lead }}</p>
@@ -20,16 +22,11 @@
     <div class="container bs-docs-container">
 
       <div class="row">
-        <div class="col-md-{% if page.fullwidth == true %}12{% else %}9{% endif %}" role="main">
+        <div class="col-md-9" role="main">
           {{ content }}
         </div>
-        {% unless page.fullwidth == true %}
-        <div class="col-md-3" role="complementary">
-          <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
-            <form class="bs-docs-search">
-              <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
-            </form>
-
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
             <ul class="nav bs-docs-sidenav">
               {% if page.slug == "getting-started" %}
                 {% include nav/getting-started.html %}
@@ -51,13 +48,12 @@
               Back to top
             </a>
             {% if page.slug == "css" or page.slug == "components" or page.slug == "js" %}
-            <a href="#" class="bs-docs-theme-toggle" role="button">
+            <a href="#" class="bs-docs-theme-toggle">
               Preview theme
             </a>
             {% endif %}
-          </nav>
+          </div>
         </div>
-        {% endunless %}
       </div>
     </div>
 
