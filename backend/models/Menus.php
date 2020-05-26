@@ -3,6 +3,9 @@
 namespace backend\models;
 
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
+use yii\behaviors\SluggableBehavior;
 
 /**
  * This is the model class for table "menus".
@@ -26,15 +29,30 @@ class Menus extends \yii\db\ActiveRecord
         return 'menus';
     }
 
+    public function behaviors()
+    {
+        return [
+
+            TimestampBehavior::class,
+            BlameableBehavior::class,
+            'slug' => [
+                'class' => SluggableBehavior::class,
+                'attribute' => 'title',
+                'ensureUnique' => true,
+                'immutable' => false
+            ]
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['title', 'slug', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'required'],
-            [['status', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
-            [['title', 'slug'], 'string', 'max' => 255],
+            [['title',], 'required'],
+            [['status'], 'boolean'],
+            [['title'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,13 +63,13 @@ class Menus extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
+            'title' => 'Заголовок',
             'slug' => 'Slug',
-            'status' => 'Status',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'created_by' => 'Created By',
-            'updated_by' => 'Updated By',
+            'status' => 'Статус',
+            'created_at' => 'Дата создания',
+            'updated_at' => 'Дата изменения',
+            'created_by' => 'Создал',
+            'updated_by' => 'Изменил',
         ];
     }
 }

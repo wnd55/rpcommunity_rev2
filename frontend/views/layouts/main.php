@@ -49,57 +49,6 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <!--    --><?php
-    //    NavBar::begin([
-    //        'brandLabel' => Yii::$app->name,
-    //        'brandUrl' => Yii::$app->homeUrl,
-    //        'options' => [
-    //            'class' => 'navbar-inverse navbar-fixed-top',
-    //        ],
-    //    ]);
-    //    $menuItems = [
-    //        ['label' => 'Home', 'url' => ['/site/index']],
-    //        ['label' => 'Контакт', 'url' => ['/site/contact']],
-    //    ];
-    //    if (Yii::$app->user->isGuest) {
-    //        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-    //        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    //    } else {
-    //
-    //        $menuItems[] = [
-    //            'label' => 'Документы ТСЖ', 'url' => ['site/documents'],
-    //            'items' => [
-    //                ['label' => 'Учредительные документы', 'url' => ['site/documents' . '#constituent']],
-    //                ['label' => 'Устав', 'url' => ['site/documents' . '#articles']],
-    //                ['label' => 'Правила проживания', 'url' => ['site/documents' . '#rules']],
-    //            ],
-    //        ];
-    //
-    //        $menuItems[] = [
-    //            'label' => 'Личный кабинет',
-    //            'items' => [
-    //                ['label' => 'Профиль', 'url' => ['/profile/index'],],
-    //                ['label' => 'Счетчики воды', 'url' => ['/water-meter/index'],],
-    //                ['label' => 'Показания воды', 'url' => ['/meters-data/index'],],
-    //            ],
-    //        ];
-    //
-    //        $menuItems[] = '<li>'
-    //            . Html::beginForm(['/site/logout'], 'post')
-    //            . Html::submitButton(
-    //                'Logout (' . Yii::$app->user->identity->username . ')',
-    //                ['class' => 'btn btn-link logout']
-    //            )
-    //            . Html::endForm()
-    //            . '</li>';
-    //    }
-    //    echo Nav::widget([
-    //        'options' => ['class' => 'navbar-nav navbar-right'],
-    //        'items' => $menuItems,
-    //    ]);
-    //    NavBar::end();
-    //    ?>
-
     <nav class="amp-navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -121,7 +70,6 @@ AppAsset::register($this);
                         <span class="title">Информация</span>
 
                     </a>
-
 
                     <?= MenuWidget::widget() ?>
 

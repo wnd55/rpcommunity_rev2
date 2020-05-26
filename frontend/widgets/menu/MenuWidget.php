@@ -2,13 +2,10 @@
 
 namespace frontend\widgets\menu;
 
-use backend\models\CategoriesPages;
+
 use backend\models\Pages;
 use paulzi\nestedsets\NestedSetsBehavior;
 use yii\base\Widget;
-use yii\data\ActiveDataProvider;
-use yii\debug\models\timeline\DataProvider;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\VarDumper;
 

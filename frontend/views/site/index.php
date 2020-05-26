@@ -1,19 +1,21 @@
 <?php
 
+use \yii\helpers\Html;
+use \frontend\widgets\pages\PagesWidget;
+
 /* @var $this yii\web\View */
 
-$this->title = 'Сайт ТСЖ "Рублевское предместье';
-
+$this->title = 'Сайт ТСЖ "Рублевское предместье 4/1';
+$this->registerMetaTag(['name' => 'title', 'content' => $this->title]);
+$this->registerMetaTag(['name' => 'description', 'content' => 'Офицальный сайт ТСЖ "Рублёвское предместье 4/1".
+Новостная информация для жителей дома, личный кабинет жильца. Информация о расходах воды в личном кабинете']);
+$this->registerMetaTag(['name' => 'keywords', 'content' => $this->title]);
 
 ?>
-
 <div class="site-index">
 
-    <div class="jumbotron ">
-
-
+    <div class="jumbotron">
         <h2>Рублевское предместье</h2>
-
         <p class="lead">Сайт ТСЖ "Рублевское предместье 4/1"</p>
 
     </div>
@@ -26,13 +28,12 @@ $this->title = 'Сайт ТСЖ "Рублевское предместье';
                 <div class="col-lg-4 main ">
 
 
-                    <img alt="" src="../uploads/files/typicons_2-0-7_user_256_0_007dff_none.png" class="img-responsive">
+                    <?= Html::img('@web/uploads/files/user.png', ['class' => 'img-responsive']) ?>
                     <div class="rp-box-shadow">
                         <h3>Регистрация</h3>
 
                         <p>Зарегистрируйтесь на сайте и
                             воспользуйтесь личным кабинетом</p>
-
                     </div>
 
                 </div>
@@ -40,24 +41,19 @@ $this->title = 'Сайт ТСЖ "Рублевское предместье';
 
                 <div class="col-lg-4 main">
 
-
-                    <img alt="" src="../uploads/files/font-awesome_4-7-0_info-circle_256_0_007dff_none.png"
-                         class="img-responsive">
-
+                    <?= Html::img('@web/uploads/files/info-circle.png', ['class' => 'img-responsive']) ?>
                     <div class="rp-box-shadow">
                         <h3>Новости</h3>
 
                         <p>Узнайте новости нашего поселка
                             и ТСЖ</p>
-
                     </div>
 
                 </div>
 
                 <div class="col-lg-4 main">
 
-                    <img alt="" src="../uploads/files/ionicons_2-0-1_waterdrop_256_0_007dff_none.png"
-                         class="img-responsive">
+                    <?= Html::img('@web/uploads/files/waterdrop.png', ['class' => 'img-responsive']) ?>
 
                     <div class="rp-box-shadow">
                         <h3>Информация</h3>
@@ -69,19 +65,40 @@ $this->title = 'Сайт ТСЖ "Рублевское предместье';
                 </div>
 
             </div>
+            <div class="pages-chat">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="pages">
+                        <?= PagesWidget::widget() ?>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h4>Чат</h4>
+                        Имя:<br/>
+                        <!--    <input id="username" type="text">-->
+                        <?= Html::input('text', null, null, ['id' => 'username']) ?>
+                        <!--    <button id="btnSetUsername">Ваше имя</button>-->
+                        <?= Html::button('Ваше имя', ['id' => 'btnSetUsername']) ?>
+
+
+                        <div id="chat"></div>
+
+                        Сообщение:<br/>
+                        <!--    <input id="message" type="text">-->
+                        <?= Html::input('text', null, null, ['id' => 'message']) ?>
+                        <!--    <button id="btnSend">Отправить</button>-->
+                        <?= Html::button('Отправить', ['id' => 'btnSend']) ?>
+                        <div id="response" style="color:#D00"></div>
+                        <!--  style="width:400px; height: 250px; overflow: scroll;"-->
+
+
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
-
-
-    Username:<br />
-    <input id="username" type="text"><button id="btnSetUsername">Set username</button>
-
-    <div id="chat" style="width:400px; height: 250px; overflow: scroll;"></div>
-
-    Message:<br />
-    <input id="message" type="text"><button id="btnSend">Send</button>
-    <div id="response" style="color:#D00"></div>
 
 </div>
 

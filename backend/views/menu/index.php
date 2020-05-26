@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\MenusSearchForm */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Menuses';
+$this->title = 'Меню';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="menus-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Menus', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Создать', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,10 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'slug',
             'status',
-            'created_at',
-            //'updated_at',
-            //'created_by',
-            //'updated_by',
+            'created_at:date',
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
