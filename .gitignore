@@ -1,0 +1,7 @@
+# phpstorm project files
+.idea
+
+frontend/tests
+common/tests
+backend/test
+
