@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 
+
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -20,6 +21,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\web\HttpException;
+use \frontend\models\Chat;
 
 
 /**
@@ -84,31 +86,23 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
+
         if (Yii::$app->request->isAjax) {
 
             $cleanMessage = HtmlPurifier::process(Yii::$app->request->post('message'));
-
-            if (Yii::$app->session->get('chat') !== null) {
-                $chatMessages = Yii::$app->session->get('chat');
-                array_push($chatMessages, $cleanMessage);
-                Yii::$app->session->set('chat', $chatMessages);
-
-                return $cleanMessage;
-
-            } else {
-                $chatMessages = array();
-                array_push($chatMessages, $cleanMessage);
-                Yii::$app->session->set('chat', $chatMessages);
-
-                return $cleanMessage;
-            }
-        }
-        if (Yii::$app->session->get('chat') !== null) {
-            $messages = Yii::$app->session->get('chat');
-            return $this->render('index', ['chat' => $messages]);
+            $cleanName = HtmlPurifier::process(Yii::$app->request->post('name'));
+            $chat = new Chat();
+            $chat->name = isset($cleanName) ? $cleanName : 'Гость';
+            $chat->message= $cleanMessage;
+            $chat->save();
+            \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            return $chat;
         }
 
-        return $this->render('index');
+        $chat = Chat::find()->all();
+        return $this->render('index', ['chat' => $chat]);
+
+
     }
 
     /**
@@ -119,15 +113,7 @@ class SiteController extends Controller
         if (!Yii::$app->request->isAjax) {
             throw new HttpException(400, 'Only ajax request is allowed.');
         }
-
-        if (Yii::$app->session->get('chat') !== null) {
-
-            Yii::$app->session->remove('chat');
-
-
-        }
-
-
+        Chat::deleteAll();
         return;
 
 
@@ -135,18 +121,25 @@ class SiteController extends Controller
 
 //    public function actionChat()
 //    {
-//        $chatMessages = array();
+//        if (Yii::$app->request->isAjax) {
 //
+//            $cleanMessage = HtmlPurifier::process(Yii::$app->request->post('message'));
 //
-//        if (!Yii::$app->request->isAjax) {
-//            throw new HttpException(400, 'Only ajax request is allowed.');
+//            if (Yii::$app->session->get('chat') !== null) {
+//                $chatMessages = Yii::$app->session->get('chat');
+//                array_push($chatMessages, $cleanMessage);
+//                Yii::$app->session->set('chat', $chatMessages);
+//
+//                return $cleanMessage;
+//
+//            } else {
+//                $chatMessages = array();
+//                array_push($chatMessages, $cleanMessage);
+//                Yii::$app->session->set('chat', $chatMessages);
+//
+//                return $cleanMessage;
+//            }
 //        }
-//
-//        $cleanMessage = Yii::$app->request->post('message');
-//        array_push($chatMessages, $cleanMessage);
-//        Yii::$app->session->set('chat', $chatMessages);
-//
-//        return $this->renderAjax('chat', ['chat' => $chatMessages]);
 //
 //    }
 

@@ -13,6 +13,6 @@ if (isset($chat)) {
 
     foreach ($chat as $value) {
 
-        echo '<div>' . $value . '</div>';
+        echo '<div class="direct-chat-text">' . $value->name . ' : ' . $value->message . '</div>';
     }
 }

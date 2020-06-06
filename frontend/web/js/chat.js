@@ -30,17 +30,17 @@ $(document).ready(function () {
         $.ajax({
             url: '/site/index',
             type: 'post',
-            dataType: 'html',
             data: {
+                'name': user.name,
                 'message': text,
                 '_csrf-frontend': yii.getCsrfToken()
             },
+            dataType: 'json',
             success: function (data) {
 
                 count.count += 10;
-                var name = user.name ? user.name : 'гость';
 
-                var template = '<div class="direct-chat-text" style="margin-left: ' + count.count + 'px"> ' + name + ' : ' + data + '</div> '
+                var template = '<div class="direct-chat-text" style="margin-left: ' + count.count + 'px"> ' + data.name + ' : ' + data.message + '</div> '
 
                 $('#chat').append(template).scrollTop(500);
                 if (count.count > 50)
