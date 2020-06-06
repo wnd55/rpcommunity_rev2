@@ -19,8 +19,8 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/common.js',
         'js/menu.js',
-        'js/websocketChat.js',
         'js/jquery.fancybox.js',
+        'js/chat.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

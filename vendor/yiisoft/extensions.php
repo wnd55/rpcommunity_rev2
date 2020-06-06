@@ -21,15 +21,6 @@ return array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
     ),
   ),
-  'yiisoft/yii2-faker' => 
-  array (
-    'name' => 'yiisoft/yii2-faker',
-    'version' => '2.0.4.0',
-    'alias' => 
-    array (
-      '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
-    ),
-  ),
   'yiisoft/yii2-jui' => 
   array (
     'name' => 'yiisoft/yii2-jui',
@@ -64,15 +55,6 @@ return array (
     'alias' => 
     array (
       '@paulzi/nestedsets' => $vendorDir . '/paulzi/yii2-nested-sets',
-    ),
-  ),
-  'consik/yii2-websocket' => 
-  array (
-    'name' => 'consik/yii2-websocket',
-    'version' => '1.0.1.0',
-    'alias' => 
-    array (
-      '@consik/yii2websocket' => $vendorDir . '/consik/yii2-websocket',
     ),
   ),
   'yiisoft/yii2-bootstrap' => 

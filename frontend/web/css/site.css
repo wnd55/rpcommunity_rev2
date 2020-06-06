@@ -475,11 +475,12 @@ a.navbar-brand:hover {
     margin-top: 20px;
 }
 
-.pages{
+.pages {
 
     padding: 20px;
 }
-.pages h4{
+
+.pages h4 {
 
     color: #0f0f0f;
     margin-bottom: 10px;
@@ -490,7 +491,7 @@ a.navbar-brand:hover {
     margin-top: 10px;
     /*max-width: 400px;*/
     overflow: scroll;
-
+    max-height: 200px;
     background: #fff8f8;
     border: 1px solid #ffdddd;
     border-radius: 4px;
@@ -499,6 +500,28 @@ a.navbar-brand:hover {
     min-height: 200px;
 
 }
+
+#message{
+
+    min-width: 100%;
+}
+
+#btnClean{
+
+    display: inline-block;
+    float: right;
+}
+
+.direct-chat-text {
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 10px;
+    background: #d2d6de;
+    border: 1px solid #d2d6de;
+    margin: 5px 0 0 50px;
+    color: #444;
+}
+
 
 @media (max-width: 768px) {
     .rp-grid .rp-grid-item, .rp-grid .rp-grid-item.col-1,

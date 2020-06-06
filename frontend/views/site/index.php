@@ -69,30 +69,32 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $this->title]);
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="pages">
-                        <?= PagesWidget::widget() ?>
+                            <?= PagesWidget::widget() ?>
                         </div>
                     </div>
 
                     <div class="col-lg-6">
                         <h4>Чат</h4>
                         Имя:<br/>
-                        <!--    <input id="username" type="text">-->
+
                         <?= Html::input('text', null, null, ['id' => 'username']) ?>
-                        <!--    <button id="btnSetUsername">Ваше имя</button>-->
                         <?= Html::button('Ваше имя', ['id' => 'btnSetUsername']) ?>
-
-
-                        <div id="chat"></div>
+                        <div id="chat">
+                            <?php if (isset($chat)): ?>
+                                <?= $this->render('_chat', [
+                                    'chat' => $chat,
+                                ]) ?>
+                            <?php endif; ?>
+                        </div>
 
                         Сообщение:<br/>
-                        <!--    <input id="message" type="text">-->
+
                         <?= Html::input('text', null, null, ['id' => 'message']) ?>
-                        <!--    <button id="btnSend">Отправить</button>-->
-                        <?= Html::button('Отправить', ['id' => 'btnSend']) ?>
-                        <div id="response" style="color:#D00"></div>
-                        <!--  style="width:400px; height: 250px; overflow: scroll;"-->
+                        <div>
+                            <?= Html::button('Отправить', ['id' => 'btnSend']) ?>
+                            <?= Html::button('Удалить', ['id' => 'btnClean',]) ?>
 
-
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,4 +103,3 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $this->title]);
     </div>
 
 </div>
-
