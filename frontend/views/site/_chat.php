@@ -11,8 +11,12 @@
 
 if (isset($chat)) {
 
+    $count = 10;
     foreach ($chat as $value) {
 
-        echo '<div class="direct-chat-text">' . $value->name . ' : ' . $value->message . '</div>';
+        $count += 10;
+        echo '<div class="direct-chat-text" style="margin-left: ' . $count . 'px">' . $value->name . ' : ' . $value->message . '</div></br>';
+        if ($count > 50)
+            $count = 10;
     }
 }

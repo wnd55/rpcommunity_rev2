@@ -91,7 +91,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $this->title]);
 
                         <?= Html::input('text', null, null, ['id' => 'message']) ?>
                         <div>
-                            <?= Html::button('Отправить', ['id' => 'btnSend']) ?>
+                            <?= Html::submitButton('Отправить', ['id' => 'btnSend']) ?>
                             <?= Html::button('Удалить', ['id' => 'btnClean',]) ?>
 
                         </div>

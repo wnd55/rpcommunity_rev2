@@ -24,6 +24,7 @@ $(document).ready(function () {
 
         var message = $('#message');
         var text = message.val();
+
         message.val('');
 
 
@@ -40,7 +41,7 @@ $(document).ready(function () {
 
                 count.count += 10;
 
-                var template = '<div class="direct-chat-text" style="margin-left: ' + count.count + 'px"> ' + data.name + ' : ' + data.message + '</div> '
+                var template = '<div class="direct-chat-text" style="margin-left: ' + count.count + 'px"> ' + data.name + ' : ' + data.message + '</div></br> ';
 
                 $('#chat').append(template).scrollTop(500);
                 if (count.count > 50)
