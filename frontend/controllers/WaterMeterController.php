@@ -80,7 +80,7 @@ class WaterMeterController extends Controller
        $user = User::findOne(['id' => Yii::$app->user->id]);
 
        if(!isset($user->profile)){
-           Yii::$app->session->setFlash('warning', 'Необходимо заполнитиь данные профиля');
+           Yii::$app->session->setFlash('warning', 'Необходимо заполнить данные профиля');
            return $this->redirect(['profile/create']);
        }
         $model = new WaterMeter();

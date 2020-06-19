@@ -205,9 +205,9 @@ class SiteController extends Controller
 
         $log = SystemLog::findOne($id);
 
-         $log->delete();
+        $log->delete();
 
-       return $this->redirect(['logs']);
+        return $this->redirect(['logs']);
 
     }
 

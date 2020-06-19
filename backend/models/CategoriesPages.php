@@ -38,7 +38,9 @@ class CategoriesPages extends \yii\db\ActiveRecord
         return 'categories_pages';
     }
 
-
+    /**
+     * @return array
+     */
     public function behaviors()
     {
         return [
@@ -51,6 +53,7 @@ class CategoriesPages extends \yii\db\ActiveRecord
                 'ensureUnique' => true,
                 'immutable' => false
             ]
+
         ];
     }
 
@@ -61,8 +64,8 @@ class CategoriesPages extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'slug', 'meta_title', 'meta_description', 'meta_keywords',], 'required'],
-            [['content'], 'string'],
+            [['title', 'meta_title', 'meta_description', 'meta_keywords',], 'required'],
+            [['content',], 'string'],
             [['parent', 'status',], 'integer'],
             [['title', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
             [['title'], 'unique',]
@@ -93,7 +96,8 @@ class CategoriesPages extends \yii\db\ActiveRecord
     }
 
 
-    public function getCategoryPagesParent($id){
+    public function getCategoryPagesParent($id)
+    {
 
 
         return ArrayHelper::map(CategoriesPages::find()->where(['not', ['id' => $id]])->asArray()->all(), 'id', 'title');
@@ -108,7 +112,6 @@ class CategoriesPages extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Pages::className(), ['categories_pages_id' => 'id']);
     }
-
 
 
 }

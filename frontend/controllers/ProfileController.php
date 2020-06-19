@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\MetersData;
 use frontend\models\ProfileCreateForm;
 use Yii;
 use common\models\Profile;
@@ -10,6 +11,7 @@ use yii\web\Controller;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
+use common\models\WaterMeter;
 
 class ProfileController extends Controller
 {
@@ -52,9 +54,12 @@ class ProfileController extends Controller
 
         if (($model = Profile::findOne(['user_id' => $id])) !== null) {
 
+            //Расход воды
+            $waterConsumption = MetersData::find()->where(['user_id' => $id])->all();
             $this->layout = 'cabinet';
             return $this->render('view', [
                 'model' => $model,
+                'waterConsumption' => $waterConsumption,
             ]);
         } else {
 
@@ -69,8 +74,6 @@ class ProfileController extends Controller
 
     public function actionCreate()
     {
-
-
         //TODO  убрать email
 
         $model = new ProfileCreateForm(null);
