@@ -21,7 +21,8 @@ class AppAsset extends AssetBundle
         'js/menu.js',
         'js/jquery.fancybox.js',
         'js/chat.js',
-        'js/chart.js'
+        'js/chart.js',
+        'js/metrika.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
